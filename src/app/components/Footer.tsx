@@ -1,75 +1,114 @@
+import imgChatGptImageJul142026055012Pm1 from "../../imports/TrdCreativeStudioⒸWebsite-1/1632661aa3faadb418045d3e7667246cd6175bc3.png";
+import imgImage11 from "../../imports/TrdCreativeStudioⒸWebsite-1/d2e0a0da0a57a02edbdf13fa7ba8ba12913b0266.png";
+
+const footerServices = [
+  "Product & UI/UX Design",
+  "Website Design & Development",
+  "Brand Strategy & Identity",
+  "Creative Production",
+];
+
+const quickLinks = ["Home", "Work", "Contact"];
+const socialLinks = ["LinkedIn", "Instagram", "Behance"];
+
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-
-  const links = {
-    Studio: ["Work", "Services", "About", "Pricing"],
-    Connect: ["LinkedIn", "Dribbble", "Behance", "Instagram"],
-    Legal: ["Privacy Policy", "Terms of Use", "Cookie Policy"],
-  };
-
   return (
-    <footer style={{ backgroundColor: "#1A1A1A", fontFamily: "Manrope, sans-serif" }} className="px-6 md:px-12 pt-16 pb-8">
-      <div className="max-w-6xl mx-auto">
-        {/* Top row */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16 pb-12" style={{ borderBottom: "1px solid #2A2A2A" }}>
+    <>
+      <section className="w-full">
+        <div className="flex p-[100px] items-center gap-[313px]">
           {/* Brand */}
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <span style={{ color: "#E8571E", fontSize: "10px", fontWeight: 700 }}>●</span>
-              <span style={{ color: "#FFFFFF", fontSize: "14px", fontWeight: 600, letterSpacing: "0.02em" }}>
-                TRD Creative Studio
-              </span>
+          <div className="flex flex-col gap-8 items-start w-[437px] shrink-0">
+            <div className="h-[106px] w-[128px] relative">
+              <div className="absolute h-[105px] left-0 top-0 w-[128px] overflow-hidden">
+                <img
+                  alt=""
+                  className="absolute max-w-none"
+                  style={{ height: "166.31%", left: "-18.6%", top: "-33.16%", width: "137.2%" }}
+                  src={imgChatGptImageJul142026055012Pm1}
+                />
+              </div>
             </div>
-            <p style={{ color: "#555555", fontSize: "13px", fontWeight: 400, lineHeight: 1.75, maxWidth: "280px" }}>
-              An independent design studio crafting clear digital experiences from complex ideas.
-            </p>
-            <p style={{ color: "#E8571E", fontSize: "13px", fontWeight: 500, marginTop: "16px" }}>
-              hello@trdcreative.studio
-            </p>
+            <div className="flex flex-col gap-4 items-start text-[var(--dark)] w-full font-[var(--font-manrope)] font-normal">
+              <p className="text-[48px] leading-[1] w-full m-0" style={{ letterSpacing: "-1.92px" }}>
+                TRD Creative Studio
+              </p>
+              <p className="text-base leading-[1.5] w-full m-0">
+                We believe every touch need the best for the clients, so we hire the best talent.
+                We believe every touch need the best for the clients, so we hire the best talent.
+              </p>
+            </div>
           </div>
 
-          {/* Link columns */}
-          {Object.entries(links).map(([group, items]) => (
-            <div key={group}>
-              <p
-                style={{
-                  color: "#555555",
-                  fontSize: "10px",
-                  fontWeight: 700,
-                  letterSpacing: "0.2em",
-                  marginBottom: "16px",
-                }}
-                className="uppercase"
-              >
-                {group}
+          {/* Links */}
+          <div className="flex gap-14 items-start">
+            {/* Services */}
+            <div className="flex flex-col gap-4 items-start justify-center">
+              <p className="font-[var(--font-manrope)] font-normal text-[var(--brand)] text-base leading-[1.4] whitespace-nowrap m-0">
+                Services
               </p>
-              <ul className="flex flex-col gap-3">
-                {items.map((item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
-                      style={{ color: "#888888", fontSize: "13px", fontWeight: 400 }}
-                      className="hover:text-white transition-colors duration-200"
-                    >
-                      {item}
-                    </a>
-                  </li>
+              <div className="flex flex-col gap-2 items-start text-[var(--dark)] font-[var(--font-manrope)] font-normal text-base leading-[1.4]" style={{ letterSpacing: "-0.32px" }}>
+                {footerServices.map((s) => (
+                  <p key={s} className="whitespace-nowrap m-0">{s}</p>
                 ))}
-              </ul>
+                <div className="flex gap-2 items-center">
+                  <p className="whitespace-nowrap m-0">AI Production</p>
+                  <span className="bg-[var(--brand)] text-white font-[var(--font-manrope)] font-semibold text-[12px] leading-[1.4] px-2 py-[2px] rounded-full">
+                    New
+                  </span>
+                </div>
+                <p className="text-[var(--text-muted-trd)] whitespace-nowrap m-0">Social Media Design</p>
+                <p className="text-[var(--text-muted-trd)] whitespace-nowrap m-0">Visual Merchandising</p>
+              </div>
             </div>
-          ))}
+            {/* Quick Links */}
+            <div className="flex flex-col gap-4 items-start justify-center w-[125px]">
+              <p className="font-[var(--font-manrope)] font-normal text-[var(--brand)] text-base leading-[1.4] m-0">
+                Quick Links
+              </p>
+              <div className="flex flex-col gap-2 items-start text-[var(--dark)] font-[var(--font-manrope)] font-normal text-base leading-[1.4] whitespace-nowrap">
+                {quickLinks.map((l) => (
+                  <p key={l} className="m-0">{l}</p>
+                ))}
+              </div>
+            </div>
+            {/* Social Media */}
+            <div className="flex flex-col gap-4 items-start justify-center w-[125px]">
+              <p className="font-[var(--font-manrope)] font-normal text-[var(--brand)] text-base leading-[1.4] m-0">
+                Social Media
+              </p>
+              <div className="flex flex-col gap-2 items-start text-[var(--dark)] font-[var(--font-manrope)] font-normal text-base leading-[1.4] whitespace-nowrap">
+                {socialLinks.map((l) => (
+                  <p key={l} className="m-0">{l}</p>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        {/* Bottom row */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p style={{ color: "#444444", fontSize: "12px", fontWeight: 400 }}>
-            © {currentYear} TRD Creative Studio. All rights reserved.
-          </p>
-          <p style={{ color: "#444444", fontSize: "12px", fontWeight: 400 }}>
-            Designed with care in Indonesia 🇮🇩
-          </p>
+      {/* Character strip */}
+      <div className="flex items-center justify-center overflow-hidden pb-[50px] w-full">
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} className="h-[134px] w-[202px] relative shrink-0 overflow-hidden">
+            <img
+              alt=""
+              className="absolute inset-0 max-w-none w-full h-full object-cover object-bottom"
+              src={imgImage11}
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Copyright */}
+      <div className="w-full border-t border-[var(--border-subtle)]">
+        <div
+          className="flex gap-4 items-center justify-center px-[100px] py-6 text-[var(--dark)] text-base leading-[1.4] whitespace-nowrap font-normal"
+          style={{ letterSpacing: "-0.32px" }}
+        >
+          <p className="font-[var(--font-manrope)] m-0">2026 ⓒ TRD Creative Studio</p>
+          <p className="font-[var(--font-manrope)] underline m-0">Privacy Policy</p>
         </div>
       </div>
-    </footer>
+    </>
   );
 }

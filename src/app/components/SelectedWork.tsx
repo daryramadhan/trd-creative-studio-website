@@ -1,111 +1,70 @@
-const projects = [
-  {
-    id: 1,
-    title: "Archivum Brand Identity",
-    category: "Branding & Identity",
-    year: "2024",
-    img: "https://images.unsplash.com/photo-1770591060040-25fd7d6a4c1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800",
-  },
-  {
-    id: 2,
-    title: "Vela Product Design",
-    category: "Product Design",
-    year: "2024",
-    img: "https://images.unsplash.com/photo-1559032806-99a331d600b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800",
-  },
-  {
-    id: 3,
-    title: "Folio Design System",
-    category: "Design System",
-    year: "2023",
-    img: "https://images.unsplash.com/photo-1541462608143-67571c6738dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800",
-  },
-  {
-    id: 4,
-    title: "Motif Visual Identity",
-    category: "Branding & Strategy",
-    year: "2023",
-    img: "https://images.unsplash.com/photo-1576153192396-180ecef2a715?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800",
-  },
-  {
-    id: 5,
-    title: "Pines Mobile App",
-    category: "UI/UX Design",
-    year: "2023",
-    img: "https://images.unsplash.com/photo-1618788372246-79faff0c3742?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800",
-  },
-  {
-    id: 6,
-    title: "Quorum Dashboard",
-    category: "Product Design",
-    year: "2022",
-    img: "https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800",
-  },
-];
+import imgChatGptImageJul142026061051Pm31 from "../../imports/TrdCreativeStudioⒸWebsite-1/95ac5e22380e3659826653ab0d53d821056bbf47.png";
+import imgRectangle11 from "../../imports/TrdCreativeStudioⒸWebsite-1/980394d6102a53ba9bdac22f3b4fb6485086f05d.png";
+
+function WorkCard() {
+  return (
+    <div className="flex-1 flex flex-col gap-3 items-center min-w-0">
+      <div className="h-[400px] rounded-[6px] w-full relative overflow-hidden">
+        <img
+          alt=""
+          className="absolute left-0 top-[0.08%] w-full max-w-none"
+          style={{ height: "238.24%" }}
+          src={imgRectangle11}
+        />
+      </div>
+      <div className="flex flex-col gap-1 items-start w-full">
+        <div className="flex items-start justify-between w-full font-[var(--font-archivo)] font-light text-sm text-center whitespace-nowrap">
+          <span className="text-[var(--dark)]">Pupuk Indonesia</span>
+          <span className="text-[var(--dark)]">[2026]</span>
+        </div>
+        {/* <p className="font-[var(--font-archivo)] font-light text-[20px] text-[var(--dark)] w-full leading-[1.4] m-0">
+          Landing Page for Pupuk Indonesia
+        </p> */}
+      </div>
+    </div>
+  );
+}
 
 export function SelectedWork() {
   return (
-    <section id="work" style={{ backgroundColor: "#F2F1EE", fontFamily: "Manrope, sans-serif" }} className="py-24 px-6 md:px-12">
-      {/* Header row */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
-        <div>
-          <p style={{ color: "#E8571E", fontSize: "11px", fontWeight: 700, letterSpacing: "0.2em" }} className="uppercase mb-3">
-            Our Portfolio
+    <section className="w-full">
+      <div className="flex gap-[100px] items-start p-[100px]">
+        {/* Left sidebar */}
+        <div className="flex flex-col gap-10 items-start justify-center w-[341px] shrink-0 sticky top-[100px] self-start">
+          <p className="font-[var(--font-archivo)] font-normal text-xs text-[var(--dark)] text-center whitespace-nowrap leading-[1.4] m-0">
+            TRD CREATIVE STUDIO ⓒ 2026
           </p>
-          <h2
-            style={{
-              fontFamily: "Archivo, sans-serif",
-              fontWeight: 200,
-              fontSize: "clamp(2rem, 4vw, 3rem)",
-              lineHeight: 1.1,
-              color: "#1A1A1A",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Selected Work
-          </h2>
-        </div>
-        <a
-          href="#"
-          style={{ color: "#1A1A1A", fontSize: "13px", fontWeight: 500, textDecoration: "underline", textUnderlineOffset: "3px" }}
-          className="self-start md:self-auto"
-        >
-          View all projects →
-        </a>
-      </div>
-
-      {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
-          <div key={project.id} className="group cursor-pointer">
-            {/* Image */}
-            <div className="relative overflow-hidden rounded-sm mb-4" style={{ aspectRatio: "4/3" }}>
-              <img
-                src={project.img}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                style={{ filter: "sepia(0.3) saturate(1.1) brightness(0.95)" }}
-              />
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5"
-                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%)" }}
-              >
-                <span style={{ color: "#FFFFFF", fontSize: "12px", fontWeight: 500 }}>View Project →</span>
-              </div>
-            </div>
-
-            {/* Info */}
-            <div className="flex items-start justify-between">
-              <div>
-                <p style={{ color: "#1A1A1A", fontSize: "15px", fontWeight: 600 }} className="mb-1">
-                  {project.title}
-                </p>
-                <p style={{ color: "#888888", fontSize: "12px", fontWeight: 400 }}>{project.category}</p>
-              </div>
-              <span style={{ color: "#AAAAAA", fontSize: "12px", fontWeight: 400 }}>{project.year}</span>
-            </div>
+          <div className="h-[161px] w-[177px] relative overflow-hidden">
+            <img
+              alt=""
+              className="absolute max-w-none"
+              style={{ height: "150.7%", left: "-18.6%", top: "-14.88%", width: "137.2%" }}
+              src={imgChatGptImageJul142026061051Pm31}
+            />
           </div>
-        ))}
+          <div className="flex flex-col gap-4">
+            <p
+              className="font-[var(--font-manrope)] font-normal text-[var(--dark)] m-0 whitespace-nowrap"
+              style={{ fontSize: 32, lineHeight: 0.9, letterSpacing: "-0.96px" }}
+            >
+              Selected Work
+            </p>
+            <p className="font-[var(--font-manrope)] font-light text-md text-[var(--dark)] leading-[1.5] text-justify w-full m-0">
+              TRD Creative Studio partners with businesses to design thoughtful websites,
+              platforms, and digital.
+            </p>
+          </div>
+        </div>
+
+        {/* Right grid: 3 rows × 2 cards */}
+        <div className="flex-1 flex flex-col gap-6 items-start min-w-0">
+          {[0, 1, 2].map((row) => (
+            <div key={row} className="flex gap-2 items-start w-full">
+              <WorkCard />
+              <WorkCard />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

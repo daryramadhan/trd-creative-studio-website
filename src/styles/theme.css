@@ -1,6 +1,17 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* ── TRD Brand Tokens ─────────────────────────────────────────── */
+  --brand: #eb5503;
+  --brand-10: rgba(235, 85, 3, 0.1);
+  --brand-5: rgba(235, 85, 3, 0.05);
+  --dark: #1e1e1e;
+  --nav-bg: #1b1b1b;
+  --border-subtle: #f4f4f4;
+  --text-muted-trd: #b4b4b4;
+  --font-manrope: 'Manrope', sans-serif;
+  --font-archivo: 'Archivo', sans-serif;
+
   --font-size: 16px;
   --background: #ffffff;
   --foreground: oklch(0.145 0 0);

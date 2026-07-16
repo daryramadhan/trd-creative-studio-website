@@ -1,180 +1,121 @@
-import { Check } from "lucide-react";
+import { StarIcon } from "./shared";
 
-const plans = [
-  {
-    id: 1,
-    name: "Studio Essentials",
-    price: "$2,500",
-    period: "per project",
-    description: "Perfect for early-stage startups and small teams that need focused design help.",
-    features: [
-      "Up to 10 screens / pages",
-      "UI Design (Web or Mobile)",
-      "1 Round of revisions",
-      "Basic component library",
-      "Figma source files",
-      "1-week delivery turnaround",
-    ],
-    cta: "Get Started",
-    highlight: false,
-  },
-  {
-    id: 2,
-    name: "Creative Plus",
-    price: "$3,500+",
-    period: "per project",
-    description: "For teams that need comprehensive design support — from strategy through to polished delivery.",
-    features: [
-      "Unlimited screens & flows",
-      "Full UX Research & Strategy",
-      "Brand Identity included",
-      "3 Rounds of revisions",
-      "Full design system",
-      "Motion & interaction design",
-      "Developer handoff support",
-      "30-day post-launch support",
-    ],
-    cta: "Get Started",
-    highlight: true,
-  },
+const pricingFeatures = [
+  "Product manager, product designer and researcher",
+  "Figma, docs and all assets licenses",
+  "Weekly meetings/dedicated message communications",
+  "Simple requests? same day. Complex flows in 1-3 business days",
 ];
+
+function PricingFeature({ text }: { text: string }) {
+  return (
+    <div className="flex gap-2 items-center w-full">
+      <StarIcon color="#eb5503" size={16} />
+      <p className="font-[var(--font-manrope)] font-normal text-sm text-[var(--dark)] leading-[1.4] flex-1 min-w-0 m-0">
+        {text}
+      </p>
+    </div>
+  );
+}
 
 export function Pricing() {
   return (
-    <section
-      id="pricing"
-      style={{ backgroundColor: "#F2F1EE", fontFamily: "Manrope, sans-serif" }}
-      className="py-24 px-6 md:px-12"
-    >
-      <div className="max-w-5xl mx-auto">
+    <section className="w-full bg-white">
+      <div className="flex flex-col gap-16 items-center justify-center py-[150px] px-[100px]">
         {/* Header */}
-        <div className="text-center mb-16">
-          <p
-            style={{ color: "#E8571E", fontSize: "11px", fontWeight: 700, letterSpacing: "0.2em" }}
-            className="uppercase mb-3"
-          >
-            Investment
-          </p>
-          <h2
-            style={{
-              fontFamily: "Archivo, sans-serif",
-              fontWeight: 200,
-              fontSize: "clamp(2rem, 4vw, 3rem)",
-              lineHeight: 1.1,
-              color: "#1A1A1A",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Pricing & Packages
-          </h2>
-          <p style={{ color: "#888888", fontSize: "14px", fontWeight: 400, marginTop: "12px", lineHeight: 1.7 }}>
-            Transparent pricing with no surprises. Every project starts with a discovery call.
-          </p>
+        <div className="flex flex-col gap-[41px] items-center w-[536px]">
+          <div className="bg-[var(--brand-5)] flex items-center justify-center px-4 py-2 rounded-full">
+            <p className="font-[var(--font-manrope)] font-medium text-[var(--brand)] text-sm leading-[1.4] text-center whitespace-nowrap m-0">
+              Partners &amp; Company We Work for
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 items-start text-[var(--dark)] text-center w-full font-[var(--font-manrope)] font-normal">
+            <p className="text-[48px] w-full m-0" style={{ lineHeight: "normal", letterSpacing: "-1.92px" }}>
+              Pricing &amp; Packages
+            </p>
+            <p className="text-base leading-[1.5] w-full m-0">
+              We create experiences that are easier for users to understand, easier for teams to
+              implement, and more valuable for businesses to grow.
+            </p>
+          </div>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {plans.map((plan) => (
-            <div
-              key={plan.id}
-              className="rounded-2xl p-8 flex flex-col"
-              style={{
-                backgroundColor: plan.highlight ? "#1A1A1A" : "#FFFFFF",
-                border: plan.highlight ? "none" : "1px solid #E5E5E0",
-              }}
-            >
-              <div className="flex items-start justify-between mb-6">
-                <div>
-                  <p
-                    style={{
-                      color: plan.highlight ? "rgba(255,255,255,0.5)" : "#888888",
-                      fontSize: "11px",
-                      fontWeight: 700,
-                      letterSpacing: "0.15em",
-                    }}
-                    className="uppercase mb-2"
-                  >
-                    {plan.name}
-                  </p>
-                  <div className="flex items-baseline gap-2">
-                    <span
-                      style={{
-                        fontFamily: "Archivo, sans-serif",
-                        fontWeight: 200,
-                        fontSize: "2.8rem",
-                        color: plan.highlight ? "#E8571E" : "#1A1A1A",
-                        lineHeight: 1,
-                        letterSpacing: "-0.02em",
-                      }}
-                    >
-                      {plan.price}
-                    </span>
-                    <span style={{ color: plan.highlight ? "rgba(255,255,255,0.4)" : "#AAAAAA", fontSize: "12px" }}>
-                      {plan.period}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
+        <div className="flex gap-8 items-start">
+          {/* Studio Access */}
+          <div className="bg-white flex flex-col gap-6 items-start justify-center p-9 rounded-[12px] w-[432px] shrink-0 border border-[var(--border-subtle)]">
+            <StarIcon color="#eb5503" size={42} />
+            <div className="flex flex-col gap-1 items-start text-[var(--dark)] w-full">
               <p
-                style={{
-                  color: plan.highlight ? "rgba(255,255,255,0.6)" : "#888888",
-                  fontSize: "13px",
-                  fontWeight: 400,
-                  lineHeight: 1.7,
-                }}
-                className="mb-8"
+                className="font-[var(--font-manrope)] font-medium w-full m-0"
+                style={{ fontSize: 32, lineHeight: "normal", letterSpacing: "-0.64px" }}
               >
-                {plan.description}
+                Studio Access
               </p>
-
-              <ul className="flex flex-col gap-3 mb-10 flex-1">
-                {plan.features.map((f) => (
-                  <li key={f} className="flex items-center gap-3">
-                    <span
-                      className="flex-shrink-0 flex items-center justify-center rounded-full"
-                      style={{
-                        width: "18px",
-                        height: "18px",
-                        backgroundColor: plan.highlight ? "#E8571E" : "#F2F1EE",
-                      }}
-                    >
-                      <Check size={10} color={plan.highlight ? "#FFFFFF" : "#1A1A1A"} strokeWidth={3} />
-                    </span>
-                    <span
-                      style={{
-                        color: plan.highlight ? "rgba(255,255,255,0.8)" : "#555555",
-                        fontSize: "13px",
-                        fontWeight: 400,
-                      }}
-                    >
-                      {f}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="#contact"
-                className="w-full text-center rounded-full py-3 transition-opacity hover:opacity-85"
-                style={{
-                  backgroundColor: plan.highlight ? "#E8571E" : "#1A1A1A",
-                  color: "#FFFFFF",
-                  fontSize: "13px",
-                  fontWeight: 600,
-                  display: "block",
-                }}
-              >
-                {plan.cta}
-              </a>
+              <p className="font-[var(--font-manrope)] font-normal text-base leading-[1.4] w-full m-0">
+                Best for Startups &amp; Scale-ups
+              </p>
             </div>
-          ))}
-        </div>
+            <div className="flex flex-col gap-2 items-start w-full">
+              <p
+                className="font-[var(--font-manrope)] font-medium text-[var(--brand)] w-full m-0"
+                style={{ fontSize: 56, lineHeight: "normal", letterSpacing: "-2.24px" }}
+              >
+                $10,500
+              </p>
+              <p className="font-[var(--font-manrope)] font-normal text-sm text-[var(--dark)] leading-[1.4] w-full m-0">
+                Monthly Price, Cancel Anytime.
+              </p>
+            </div>
+            <button className="bg-[var(--brand)] text-white font-[var(--font-manrope)] font-semibold text-base leading-[1.4] px-6 py-2 rounded-full border-none cursor-pointer whitespace-nowrap hover:opacity-90 transition-opacity">
+              Claim 1 of 4 spots left
+            </button>
+            <div className="h-px bg-[var(--border-subtle)] w-full" />
+            <div className="flex flex-col gap-3 items-start w-full">
+              <p className="font-[var(--font-manrope)] font-normal text-sm text-[var(--dark)] leading-[1.4] w-full m-0">
+                Includes :
+              </p>
+              {pricingFeatures.map((f) => <PricingFeature key={f} text={f} />)}
+            </div>
+          </div>
 
-        {/* Note */}
-        <p className="text-center mt-8" style={{ color: "#AAAAAA", fontSize: "12px", fontWeight: 400 }}>
-          Need something custom? <a href="#contact" style={{ color: "#E8571E", textDecoration: "underline" }}>Let's talk</a> — we're happy to scope something unique.
-        </p>
+          {/* Enterprise Plan */}
+          <div className="bg-white flex flex-col gap-6 items-start justify-center p-9 rounded-[12px] w-[432px] shrink-0 border border-[var(--border-subtle)]">
+            <StarIcon color="#b4b4b4" size={42} />
+            <div className="flex flex-col gap-1 items-start text-[var(--dark)] w-full">
+              <p
+                className="font-[var(--font-manrope)] font-medium w-full m-0"
+                style={{ fontSize: 32, lineHeight: "normal", letterSpacing: "-0.64px" }}
+              >
+                Enterprise Plan
+              </p>
+              <p className="font-[var(--font-manrope)] font-normal text-base leading-[1.4] w-full m-0">
+                Best for project-based
+              </p>
+            </div>
+            <div className="flex flex-col gap-2 items-start w-full">
+              <p
+                className="font-[var(--font-manrope)] font-medium text-[var(--dark)] w-full m-0"
+                style={{ fontSize: 56, lineHeight: "normal", letterSpacing: "-2.24px" }}
+              >
+                $3,500+
+              </p>
+              <p className="font-[var(--font-manrope)] font-normal text-sm text-[var(--dark)] leading-[1.4] w-full m-0">
+                Monthly Price, Cancel Anytime.
+              </p>
+            </div>
+            <button className="bg-transparent text-[var(--brand)] font-[var(--font-manrope)] font-semibold text-base leading-[1.4] px-6 py-2 rounded-full border border-[var(--brand)] cursor-pointer whitespace-nowrap hover:bg-[var(--brand-5)] transition-colors">
+              Discuss Your Project
+            </button>
+            <div className="h-px bg-[var(--border-subtle)] w-full" />
+            <div className="flex flex-col gap-3 items-start w-full">
+              <p className="font-[var(--font-manrope)] font-normal text-sm text-[var(--dark)] leading-[1.4] w-full m-0">
+                Includes :
+              </p>
+              {pricingFeatures.map((f) => <PricingFeature key={f} text={f} />)}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

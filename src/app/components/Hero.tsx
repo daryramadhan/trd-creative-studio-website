@@ -1,78 +1,48 @@
-import { ArrowRight } from "lucide-react";
+import { Dot } from "./shared";
+import { Navbar } from "./Navbar";
 
 export function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 pt-28 pb-20"
-      style={{ backgroundColor: "#1A1A1A", fontFamily: "Manrope, sans-serif" }}
-    >
-      {/* Eyebrow label */}
-      <div className="flex items-center gap-2 mb-8">
-        <span style={{ color: "#E8571E", fontSize: "11px", fontWeight: 700, letterSpacing: "0.2em" }} className="uppercase">
-          ★ Creative Studio
-        </span>
-      </div>
+    <section className="relative w-full bg-[var(--dark)]" style={{ minHeight: 982 }}>
+      <Navbar />
 
-      {/* Main headline */}
-      <h1
-        className="max-w-4xl mb-8"
-        style={{
-          fontFamily: "Archivo, sans-serif",
-          fontWeight: 200,
-          fontSize: "clamp(2.8rem, 6vw, 5.5rem)",
-          lineHeight: 1.08,
-          color: "#F2F0EB",
-          letterSpacing: "-0.02em",
-        }}
-      >
-        Turn complex ideas into clear digital products.
-      </h1>
+      {/* Main content */}
+      <div className="flex flex-col items-center justify-end h-full px-[100px] pt-[200px] pb-[100px] gap-14">
+        {/* Badge */}
+        <div className="flex gap-[10px] items-center justify-center px-4 py-2 rounded-full bg-[var(--brand-10)]">
+          <p className="font-[var(--font-manrope)] text-[var(--brand)] text-sm leading-[1.4] text-center m-0">
+            <span className="font-bold">6 project slots </span>
+            <span className="font-normal">available this month</span>
+          </p>
+          <Dot color="#eb5503" size={4} />
+          <span className="font-[var(--font-manrope)] font-lgith text-[var(--brand)] text-sm leading-[1.4] underline whitespace-nowrap">
+            See Pricing
+          </span>
+        </div>
 
-      {/* Subtext */}
-      <p
-        className="max-w-md mb-12"
-        style={{ color: "#888888", fontSize: "15px", fontWeight: 400, lineHeight: 1.7 }}
-      >
-        We help startups and product teams transform ideas, requirements, and challenges into practical digital experiences.
-      </p>
+        {/* Headline block */}
+        <div className="flex flex-col items-center gap-8 max-w-[800px] w-full text-center">
+          <p
+            className="font-[var(--font-manrope)] font-normal text-white m-0"
+            style={{ fontSize: 82, lineHeight: 1, letterSpacing: "-1.64px" }}
+          >
+            Turn complex ideas into clear digital products.
+          </p>
+          <p className="font-[var(--font-manrope)] font-light text-white text-base leading-[1.5] max-w-[586px] m-0">
+            TRD Creative Studio partners with businesses to design thoughtful websites,
+            platforms, and digital experiences–from early strategy to final execution
+          </p>
+        </div>
 
-      {/* CTA row */}
-      <div className="flex flex-wrap items-center gap-6">
-        <a
-          href="#contact"
-          className="inline-flex items-center gap-2 rounded-full px-7 py-3 transition-opacity hover:opacity-90"
-          style={{ backgroundColor: "#E8571E", color: "#FFFFFF", fontSize: "14px", fontWeight: 600 }}
-        >
-          Start a Project <ArrowRight size={15} />
-        </a>
-        <a
-          href="#work"
-          style={{ color: "#888888", fontSize: "14px", fontWeight: 500 }}
-          className="hover:text-white transition-colors duration-200 flex items-center gap-1"
-        >
-          See our work <ArrowRight size={14} />
-        </a>
-      </div>
-
-      {/* Bottom stat bar */}
-      <div
-        className="absolute bottom-0 left-0 right-0 px-6 md:px-12 py-6 flex flex-wrap items-center gap-10"
-        style={{ borderTop: "1px solid #2A2A2A" }}
-      >
-        {[
-          { value: "50+", label: "Projects Delivered" },
-          { value: "8+", label: "Years of Experience" },
-          { value: "35+", label: "Happy Clients" },
-          { value: "100%", label: "Client Satisfaction" },
-        ].map((stat) => (
-          <div key={stat.label} className="flex items-baseline gap-2">
-            <span style={{ color: "#E8571E", fontSize: "20px", fontWeight: 700, fontFamily: "Archivo, sans-serif" }}>
-              {stat.value}
-            </span>
-            <span style={{ color: "#555555", fontSize: "12px", fontWeight: 400 }}>{stat.label}</span>
-          </div>
-        ))}
+        {/* CTA buttons */}
+        <div className="flex gap-4 items-center">
+          <button className="bg-[var(--brand)] text-white font-[var(--font-manrope)] font-light text-base leading-[1.4] px-6 py-2 rounded-full border-none cursor-pointer whitespace-nowrap hover:opacity-90 transition-opacity">
+            Start a Project
+          </button>
+          <button className="bg-transparent text-white font-[var(--font-manrope)] font-light text-base leading-[1.4] px-6 py-2 rounded-full border-none cursor-pointer whitespace-nowrap hover:opacity-80 transition-opacity">
+            View Selected Work
+          </button>
+        </div>
       </div>
     </section>
   );

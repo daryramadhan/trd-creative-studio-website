@@ -1,83 +1,30 @@
-import { ArrowRight } from "lucide-react";
-
 export function CTA() {
   return (
-    <section
-      id="contact"
-      style={{ backgroundColor: "#E8571E", fontFamily: "Manrope, sans-serif" }}
-      className="py-32 px-6 md:px-12"
-    >
-      <div className="max-w-4xl mx-auto text-center">
-        {/* Eyebrow */}
-        <p
-          style={{
-            color: "rgba(255,255,255,0.55)",
-            fontSize: "11px",
-            fontWeight: 700,
-            letterSpacing: "0.2em",
-          }}
-          className="uppercase mb-8"
-        >
-          Ready to Start?
-        </p>
-
-        {/* Headline */}
-        <h2
-          className="mb-10"
-          style={{
-            fontFamily: "Archivo, sans-serif",
-            fontWeight: 200,
-            fontSize: "clamp(2.5rem, 6vw, 5rem)",
-            lineHeight: 1.05,
-            color: "#FFFFFF",
-            letterSpacing: "-0.025em",
-          }}
-        >
-          Let's shape something valuable together.
-        </h2>
-
-        {/* Subtext */}
-        <p
-          className="mb-12"
-          style={{
-            color: "rgba(255,255,255,0.7)",
-            fontSize: "15px",
-            fontWeight: 400,
-            lineHeight: 1.75,
-            maxWidth: "480px",
-            margin: "0 auto 48px",
-          }}
-        >
-          Have a project in mind or just want to explore working together? Reach out — we respond within 24 hours.
-        </p>
-
-        {/* Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="mailto:hello@trdcreative.studio"
-            className="inline-flex items-center gap-2 rounded-full px-8 py-4 transition-opacity hover:opacity-90"
-            style={{
-              backgroundColor: "#FFFFFF",
-              color: "#1A1A1A",
-              fontSize: "14px",
-              fontWeight: 600,
-            }}
-          >
-            Send us a message <ArrowRight size={15} />
-          </a>
-          <a
-            href="#work"
-            className="inline-flex items-center gap-2 rounded-full px-8 py-4 transition-opacity hover:opacity-80"
-            style={{
-              backgroundColor: "rgba(255,255,255,0.15)",
-              color: "#FFFFFF",
-              fontSize: "14px",
-              fontWeight: 500,
-              border: "1px solid rgba(255,255,255,0.3)",
-            }}
-          >
-            View our work
-          </a>
+    <section className="w-full bg-[var(--brand)]">
+      <div className="flex flex-col items-center justify-center py-[150px] px-[100px]">
+        <div className="flex flex-col gap-12 items-center max-w-[858px] w-full">
+          <div className="bg-white/10 flex items-center justify-center px-4 py-2 rounded-full">
+            <p className="font-[var(--font-manrope)] font-medium text-white text-sm leading-[1.4] text-center whitespace-nowrap m-0">
+              Partners &amp; Company We Work for
+            </p>
+          </div>
+          <div className="flex flex-col gap-6 items-center text-white font-[var(--font-manrope)] font-normal text-center">
+            <p className="text-[82px] leading-[1] w-full m-0" style={{ letterSpacing: "-1.64px" }}>
+              Let's shape something valuable together.
+            </p>
+            <p className="text-base leading-[1.5] max-w-[532px] m-0">
+              Tell us about your product, website, or business challenge. We'll help you identify
+              the right scope and next step.
+            </p>
+          </div>
+          <div className="flex gap-4 items-center">
+            <button className="bg-white text-[var(--brand)] font-[var(--font-manrope)] font-semibold text-base leading-[1.4] px-6 py-2 rounded-full border-none cursor-pointer whitespace-nowrap hover:opacity-90 transition-opacity">
+              Start a Project
+            </button>
+            <button className="bg-transparent text-white font-[var(--font-manrope)] font-semibold text-base leading-[1.4] px-6 py-2 rounded-full border-none cursor-pointer whitespace-nowrap hover:opacity-80 transition-opacity">
+              Schedule Free 30-min Call
+            </button>
+          </div>
         </div>
       </div>
     </section>

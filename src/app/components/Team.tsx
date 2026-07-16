@@ -1,81 +1,48 @@
-const members = [
-  {
-    id: 1,
-    name: "Trisna Raditya",
-    role: "Founder & Lead Designer",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600",
-  },
-  {
-    id: 2,
-    name: "Anisa Wardani",
-    role: "UX Researcher",
-    img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600",
-  },
-  {
-    id: 3,
-    name: "Sari Permata",
-    role: "Brand Designer",
-    img: "https://images.unsplash.com/photo-1609436132311-e4b0c9370469?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=600",
-  },
+import imgImage11 from "../../imports/TrdCreativeStudioⒸWebsite-1/d2e0a0da0a57a02edbdf13fa7ba8ba12913b0266.png";
+import { StarIcon } from "./shared";
+
+const teamMembers = [
+  { name: "Wildan", role: "Founder & Director" },
+  { name: "Dary", role: "Product Designer" },
+  { name: "Avei", role: "Front-end Engineer" },
+  { name: "Dary", role: "Back-end Engineer" },
 ];
 
 export function Team() {
   return (
-    <section style={{ backgroundColor: "#FFFFFF", fontFamily: "Manrope, sans-serif" }} className="py-24 px-6 md:px-12">
-      <div className="max-w-5xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <p
-            style={{ color: "#E8571E", fontSize: "11px", fontWeight: 700, letterSpacing: "0.2em" }}
-            className="uppercase mb-3"
-          >
-            Our Team
-          </p>
-          <h2
-            style={{
-              fontFamily: "Archivo, sans-serif",
-              fontWeight: 200,
-              fontSize: "clamp(2rem, 4vw, 3rem)",
-              lineHeight: 1.1,
-              color: "#1A1A1A",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            The people behind <br className="hidden md:block" />
-            TRD Creative Studio
-          </h2>
+    <section className="w-full relative border-t border-b border-[var(--border-subtle)]">
+      <div className="flex items-center justify-between pb-[150px] pt-[100px] px-[100px]">
+        {/* Left */}
+        <div className="flex flex-col gap-8 items-start w-[437px] shrink-0">
+          <StarIcon color="#eb5503" size={42} />
+          <div className="flex flex-col gap-4 items-start text-[var(--dark)] w-full font-[var(--font-manrope)] font-normal">
+            <p className="text-[48px] leading-[1] w-full m-0" style={{ letterSpacing: "-1.92px" }}>
+              The people behind TRD Creative Studio.
+            </p>
+            <p className="text-base leading-[1.5] w-full m-0">
+              We work with a focused team of designers, developers, and creative partners to make
+              every project clear, thoughtful, and ready to launch.
+            </p>
+          </div>
         </div>
-
-        {/* Team grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {members.map((member) => (
-            <div key={member.id} className="flex flex-col items-center text-center group">
-              <div
-                className="overflow-hidden rounded-2xl mb-5"
-                style={{ width: "100%", aspectRatio: "3/4" }}
-              >
+        {/* Right: team grid */}
+        <div className="flex gap-6 items-start">
+          {teamMembers.map((m, i) => (
+            <div key={i} className="flex flex-col gap-6 items-center">
+              <div className="h-[119px] w-[180px] relative overflow-hidden">
                 <img
-                  src={member.img}
-                  alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  style={{ filter: "sepia(0.15) saturate(1.05) brightness(0.97)" }}
+                  alt={m.name}
+                  className="absolute inset-0 max-w-none w-full h-full object-cover object-bottom"
+                  src={imgImage11}
                 />
               </div>
-              <p style={{ color: "#1A1A1A", fontSize: "16px", fontWeight: 600, marginBottom: "4px" }}>
-                {member.name}
-              </p>
-              <p style={{ color: "#888888", fontSize: "12px", fontWeight: 400 }}>{member.role}</p>
+              <div className="flex flex-col gap-1 items-center text-[var(--dark)] text-center w-full" style={{ lineHeight: "normal" }}>
+                <p className="font-[var(--font-manrope)] font-semibold text-[18px] w-full m-0">{m.name}</p>
+                <p className="font-[var(--font-manrope)] font-normal text-base w-full m-0">{m.role}</p>
+              </div>
             </div>
           ))}
         </div>
-
-        {/* Subtext */}
-        <p
-          className="text-center mt-14"
-          style={{ color: "#AAAAAA", fontSize: "13px", fontWeight: 400, lineHeight: 1.8, maxWidth: "480px", margin: "56px auto 0" }}
-        >
-          We're a small and focused team that works closely with every client. No hand-offs to juniors — you always work directly with us.
-        </p>
       </div>
     </section>
   );
