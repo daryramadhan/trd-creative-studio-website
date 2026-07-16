@@ -11,7 +11,7 @@ export function Hero() {
         {/* Badge */}
         <div className="flex gap-[10px] items-center justify-center px-4 py-2 rounded-full bg-[var(--brand-10)]">
           <p className="font-[var(--font-manrope)] text-[var(--brand)] text-sm leading-[1.4] text-center m-0">
-            <span className="font-bold">6 project slots </span>
+            <span className="font-medium">6 project slots </span>
             <span className="font-normal">available this month</span>
           </p>
           <Dot color="#eb5503" size={4} />

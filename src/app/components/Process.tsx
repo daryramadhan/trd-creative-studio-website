@@ -15,13 +15,13 @@ interface ProcessCardProps {
 
 function ProcessCard({ num, badge, img, imgW, imgH, title, desc }: ProcessCardProps) {
   return (
-    <div className="flex-1 bg-white rounded-[12px] flex flex-col items-start justify-between p-6 h-[460px] min-w-0">
+    <div className="flex-1 bg-white rounded-[20px] flex flex-col items-start justify-between p-6 h-[460px] min-w-0">
       <div className="flex items-start justify-between w-full">
-        <p className="font-[var(--font-manrope)] font-normal text-[var(--brand)] text-[20px] leading-[1.4] whitespace-nowrap m-0">
-          [ {num} ]
+        <p className="font-[var(--font-manrope)] font-light text-[var(--brand)] text-md whitespace-nowrap m-0">
+          [{num}]
         </p>
         {badge && (
-          <span className="bg-[var(--brand)] text-white font-[var(--font-manrope)] font-semibold text-sm leading-[1.4] px-2 py-[2px] rounded-full whitespace-nowrap">
+          <span className="bg-[var(--brand)] text-white font-[var(--font-manrope)] font-light text-sm px-3 py-1 rounded-full whitespace-nowrap">
             {badge}
           </span>
         )}
@@ -35,18 +35,17 @@ function ProcessCard({ num, badge, img, imgW, imgH, title, desc }: ProcessCardPr
         />
       </div>
       <div className="flex flex-col gap-[42px] items-start w-full font-[var(--font-manrope)] font-normal">
-        <div className="flex flex-col gap-4 items-start w-full">
+        <div className="flex flex-col gap-2 items-start w-full">
           <p
-            className="text-[var(--brand)] w-full m-0"
-            style={{ fontSize: 32, lineHeight: 1.2, letterSpacing: "-0.64px" }}
+            className="text-[var(--brand)] w-full m-0 font-light text-[32px]"
           >
             {title}
           </p>
-          <p className="text-[var(--dark)] text-[17px] w-full m-0" style={{ lineHeight: "normal" }}>
+          <p className="text-[var(--dark)] text-md font-light w-full m-0">
             {desc}
           </p>
         </div>
-        <p className="text-[var(--brand)] text-base leading-[1.4] whitespace-nowrap m-0">
+        <p className="text-[var(--brand)] font-light text-base whitespace-nowrap m-0">
           Book discovery call →
         </p>
       </div>

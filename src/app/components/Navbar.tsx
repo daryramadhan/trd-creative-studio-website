@@ -5,12 +5,12 @@ const NAV_RIGHT = ["Services", "Pricing"];
 
 export function Navbar() {
   return (
-    <nav className="absolute top-0 left-0 right-0 flex items-center justify-center gap-16 px-[100px] py-10">
+    <nav className="absolute top-0 left-0 right-0 flex items-center justify-center gap-12 px-[100px] py-10">
       {NAV_LEFT.map((l) => (
         <a
           key={l}
           href={`#${l.toLowerCase().replace(" ", "-")}`}
-          className="font-[var(--font-manrope)] font-light text-sm text-white leading-[1.4] whitespace-nowrap hover:text-[var(--brand)] transition-colors duration-200"
+          className="font-[var(--font-manrope)] font-light text-md text-white leading-[1.4] whitespace-nowrap hover:text-[var(--brand)] transition-colors duration-200"
         >
           {l}
         </a>
@@ -20,7 +20,7 @@ export function Navbar() {
         <a
           key={l}
           href={`#${l.toLowerCase()}`}
-          className="font-[var(--font-manrope)] font-light text-sm text-white leading-[1.4] whitespace-nowrap hover:text-[var(--brand)] transition-colors duration-200"
+          className="font-[var(--font-manrope)] font-light text-md text-white leading-[1.4] whitespace-nowrap hover:text-[var(--brand)] transition-colors duration-200"
         >
           {l}
         </a>

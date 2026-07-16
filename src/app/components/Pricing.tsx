@@ -11,7 +11,7 @@ function PricingFeature({ text }: { text: string }) {
   return (
     <div className="flex gap-2 items-center w-full">
       <StarIcon color="#eb5503" size={16} />
-      <p className="font-[var(--font-manrope)] font-normal text-sm text-[var(--dark)] leading-[1.4] flex-1 min-w-0 m-0">
+      <p className="font-[var(--font-manrope)] font-light text-sm text-[var(--dark)] flex-1 min-w-0 m-0">
         {text}
       </p>
     </div>
@@ -25,15 +25,15 @@ export function Pricing() {
         {/* Header */}
         <div className="flex flex-col gap-[41px] items-center w-[536px]">
           <div className="bg-[var(--brand-5)] flex items-center justify-center px-4 py-2 rounded-full">
-            <p className="font-[var(--font-manrope)] font-medium text-[var(--brand)] text-sm leading-[1.4] text-center whitespace-nowrap m-0">
+            <p className="font-[var(--font-manrope)] font-light text-[var(--brand)] text-sm leading-[1.4] text-center whitespace-nowrap m-0">
               Partners &amp; Company We Work for
             </p>
           </div>
           <div className="flex flex-col gap-4 items-start text-[var(--dark)] text-center w-full font-[var(--font-manrope)] font-normal">
-            <p className="text-[48px] w-full m-0" style={{ lineHeight: "normal", letterSpacing: "-1.92px" }}>
+            <p className="text-[48px] font-light w-full m-0" style={{ lineHeight: "normal", letterSpacing: "-1.92px" }}>
               Pricing &amp; Packages
             </p>
-            <p className="text-base leading-[1.5] w-full m-0">
+            <p className="text-regular font-light leading-[1.5] w-full m-0">
               We create experiences that are easier for users to understand, easier for teams to
               implement, and more valuable for businesses to grow.
             </p>
@@ -41,38 +41,38 @@ export function Pricing() {
         </div>
 
         {/* Cards */}
-        <div className="flex gap-8 items-start">
+        <div className="flex gap-5 items-start">
           {/* Studio Access */}
-          <div className="bg-white flex flex-col gap-6 items-start justify-center p-9 rounded-[12px] w-[432px] shrink-0 border border-[var(--border-subtle)]">
-            <StarIcon color="#eb5503" size={42} />
+          <div className="bg-white flex flex-col gap-6 items-start justify-center p-8 rounded-[12px] w-[432px] shrink-0 border border-[var(--border-subtle)]">
+            <StarIcon color="#eb5503" size={32} />
             <div className="flex flex-col gap-1 items-start text-[var(--dark)] w-full">
               <p
-                className="font-[var(--font-manrope)] font-medium w-full m-0"
+                className="font-[var(--font-manrope)] font-light w-full m-0"
                 style={{ fontSize: 32, lineHeight: "normal", letterSpacing: "-0.64px" }}
               >
                 Studio Access
               </p>
-              <p className="font-[var(--font-manrope)] font-normal text-base leading-[1.4] w-full m-0">
+              <p className="font-[var(--font-manrope)] font-light text-lg w-full m-0">
                 Best for Startups &amp; Scale-ups
               </p>
             </div>
             <div className="flex flex-col gap-2 items-start w-full">
               <p
-                className="font-[var(--font-manrope)] font-medium text-[var(--brand)] w-full m-0"
-                style={{ fontSize: 56, lineHeight: "normal", letterSpacing: "-2.24px" }}
+                className="font-[var(--font-manrope)] font-regular text-[var(--brand)] w-full m-0"
+                style={{ fontSize: 48, lineHeight: "normal", letterSpacing: "-1px" }}
               >
-                $10,500
+                $2,500
               </p>
-              <p className="font-[var(--font-manrope)] font-normal text-sm text-[var(--dark)] leading-[1.4] w-full m-0">
+              <p className="font-[var(--font-manrope)] font-light text-md text-[var(--dark)] leading-[1.4] w-full m-0">
                 Monthly Price, Cancel Anytime.
               </p>
             </div>
-            <button className="bg-[var(--brand)] text-white font-[var(--font-manrope)] font-semibold text-base leading-[1.4] px-6 py-2 rounded-full border-none cursor-pointer whitespace-nowrap hover:opacity-90 transition-opacity">
+            <button className="bg-[var(--brand)] text-white font-[var(--font-manrope)] font-regular leading-[1.4] px-6 py-2 rounded-full border-none cursor-pointer whitespace-nowrap hover:opacity-90 transition-opacity">
               Claim 1 of 4 spots left
             </button>
-            <div className="h-px bg-[var(--border-subtle)] w-full" />
+            <div className="h-px bg-[var(--border-subtle)] w-full mt-2 mb-2" />
             <div className="flex flex-col gap-3 items-start w-full">
-              <p className="font-[var(--font-manrope)] font-normal text-sm text-[var(--dark)] leading-[1.4] w-full m-0">
+              <p className="font-[var(--font-manrope)] font-light text-sm text-[var(--dark)] w-full m-0">
                 Includes :
               </p>
               {pricingFeatures.map((f) => <PricingFeature key={f} text={f} />)}
@@ -81,35 +81,35 @@ export function Pricing() {
 
           {/* Enterprise Plan */}
           <div className="bg-white flex flex-col gap-6 items-start justify-center p-9 rounded-[12px] w-[432px] shrink-0 border border-[var(--border-subtle)]">
-            <StarIcon color="#b4b4b4" size={42} />
+            <StarIcon color="#b4b4b4" size={32} />
             <div className="flex flex-col gap-1 items-start text-[var(--dark)] w-full">
               <p
-                className="font-[var(--font-manrope)] font-medium w-full m-0"
+                className="font-[var(--font-manrope)] font-light w-full m-0"
                 style={{ fontSize: 32, lineHeight: "normal", letterSpacing: "-0.64px" }}
               >
                 Enterprise Plan
               </p>
-              <p className="font-[var(--font-manrope)] font-normal text-base leading-[1.4] w-full m-0">
+              <p className="font-[var(--font-manrope)] font-light text-lg w-full m-0">
                 Best for project-based
               </p>
             </div>
             <div className="flex flex-col gap-2 items-start w-full">
               <p
-                className="font-[var(--font-manrope)] font-medium text-[var(--dark)] w-full m-0"
-                style={{ fontSize: 56, lineHeight: "normal", letterSpacing: "-2.24px" }}
+                className="font-[var(--font-manrope)] font-regular text-[var(--dark)] w-full m-0"
+                style={{ fontSize: 48, lineHeight: "normal", letterSpacing: "-1px" }}
               >
-                $3,500+
+                $3,500
               </p>
-              <p className="font-[var(--font-manrope)] font-normal text-sm text-[var(--dark)] leading-[1.4] w-full m-0">
+              <p className="font-[var(--font-manrope)] font-light text-md text-[var(--dark)] leading-[1.4] w-full m-0">
                 Monthly Price, Cancel Anytime.
               </p>
             </div>
-            <button className="bg-transparent text-[var(--brand)] font-[var(--font-manrope)] font-semibold text-base leading-[1.4] px-6 py-2 rounded-full border border-[var(--brand)] cursor-pointer whitespace-nowrap hover:bg-[var(--brand-5)] transition-colors">
+            <button className="bg-transparent text-[var(--brand)] font-[var(--font-manrope)] font-normal text-base leading-[1.4] px-6 py-2 rounded-full border border-[var(--brand)] cursor-pointer whitespace-nowrap hover:bg-[var(--brand-5)] transition-colors">
               Discuss Your Project
             </button>
-            <div className="h-px bg-[var(--border-subtle)] w-full" />
+            <div className="h-px bg-[var(--border-subtle)] w-full mt-2 mb-2" />
             <div className="flex flex-col gap-3 items-start w-full">
-              <p className="font-[var(--font-manrope)] font-normal text-sm text-[var(--dark)] leading-[1.4] w-full m-0">
+              <p className="font-[var(--font-manrope)] font-light text-sm text-[var(--dark)] w-full m-0">
                 Includes :
               </p>
               {pricingFeatures.map((f) => <PricingFeature key={f} text={f} />)}
