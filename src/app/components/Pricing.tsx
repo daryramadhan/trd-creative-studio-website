@@ -21,19 +21,22 @@ function PricingFeature({ text }: { text: string }) {
 export function Pricing() {
   return (
     <section className="w-full bg-white">
-      <div className="flex flex-col gap-16 items-center justify-center py-[150px] px-[100px]">
+      <div className="flex flex-col gap-12 lg:gap-16 items-center justify-center py-16 lg:py-[150px] px-5 lg:px-[100px]">
         {/* Header */}
-        <div className="flex flex-col gap-[41px] items-center w-[536px]">
+        <div className="flex flex-col gap-8 lg:gap-[41px] items-center w-full lg:w-[536px]">
           <div className="bg-[var(--brand-5)] flex items-center justify-center px-4 py-2 rounded-full">
             <p className="font-[var(--font-manrope)] font-light text-[var(--brand)] text-sm leading-[1.4] text-center whitespace-nowrap m-0">
               Partners &amp; Company We Work for
             </p>
           </div>
           <div className="flex flex-col gap-4 items-start text-[var(--dark)] text-center w-full font-[var(--font-manrope)] font-normal">
-            <p className="text-[48px] font-light w-full m-0" style={{ lineHeight: "normal", letterSpacing: "-1.92px" }}>
+            <p
+              className="font-light w-full m-0"
+              style={{ fontSize: "clamp(32px, 6vw, 48px)", lineHeight: "normal", letterSpacing: "-1.92px" }}
+            >
               Pricing &amp; Packages
             </p>
-            <p className="text-regular font-light leading-[1.5] w-full m-0">
+            <p className="text-sm lg:text-regular font-light leading-[1.5] w-full m-0">
               We create experiences that are easier for users to understand, easier for teams to
               implement, and more valuable for businesses to grow.
             </p>
@@ -41,9 +44,9 @@ export function Pricing() {
         </div>
 
         {/* Cards */}
-        <div className="flex gap-5 items-start">
+        <div className="flex flex-col lg:flex-row gap-5 items-stretch w-full lg:w-auto">
           {/* Studio Access */}
-          <div className="bg-white flex flex-col gap-6 items-start justify-center p-8 rounded-[12px] w-[432px] shrink-0 border border-[var(--border-subtle)]">
+          <div className="bg-white flex flex-col gap-6 items-start justify-center p-8 rounded-[12px] w-full lg:w-[432px] lg:shrink-0 border border-[var(--border-subtle)]">
             <StarIcon color="#eb5503" size={32} />
             <div className="flex flex-col gap-1 items-start text-[var(--dark)] w-full">
               <p
@@ -80,7 +83,7 @@ export function Pricing() {
           </div>
 
           {/* Enterprise Plan */}
-          <div className="bg-white flex flex-col gap-6 items-start justify-center p-9 rounded-[12px] w-[432px] shrink-0 border border-[var(--border-subtle)]">
+          <div className="bg-white flex flex-col gap-6 items-start justify-center p-8 lg:p-9 rounded-[12px] w-full lg:w-[432px] lg:shrink-0 border border-[var(--border-subtle)]">
             <StarIcon color="#b4b4b4" size={32} />
             <div className="flex flex-col gap-1 items-start text-[var(--dark)] w-full">
               <p

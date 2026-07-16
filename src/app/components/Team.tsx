@@ -11,25 +11,28 @@ const teamMembers = [
 export function Team() {
   return (
     <section className="w-full relative border-t border-b border-[var(--border-subtle)]">
-      <div className="flex items-center justify-between pb-[150px] pt-[100px] px-[100px]">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12 lg:gap-0 py-16 lg:pb-[150px] lg:pt-[100px] px-5 lg:px-[100px]">
         {/* Left */}
-        <div className="flex flex-col gap-8 items-start w-[400px] shrink-0">
+        <div className="flex flex-col gap-6 lg:gap-8 items-start w-full lg:w-[400px] lg:shrink-0">
           <StarIcon color="#eb5503" size={56} />
           <div className="flex flex-col gap-4 items-start text-[var(--dark)] w-full font-[var(--font-manrope)] font-light">
-            <p className="text-[48px] leading-[1] w-full m-0" style={{ letterSpacing: "-1.92px" }}>
+            <p
+              className="leading-[1] w-full m-0"
+              style={{ fontSize: "clamp(32px, 6vw, 48px)", letterSpacing: "-1.92px" }}
+            >
               The people behind TRD Creative Studio.
             </p>
-            <p className="text-base w-full m-0">
+            <p className="text-sm lg:text-base w-full m-0">
               We work with a focused team of designers, developers, and creative partners to make
               every project clear, thoughtful, and ready to launch.
             </p>
           </div>
         </div>
         {/* Right: team grid */}
-        <div className="flex gap-4 items-start">
+        <div className="grid grid-cols-2 lg:flex lg:flex-row gap-4 lg:gap-4 items-start w-full lg:w-auto">
           {teamMembers.map((m, i) => (
-            <div key={i} className="flex flex-col gap-6 items-center">
-              <div className="h-[180px] w-[180px] relative">
+            <div key={i} className="flex flex-col gap-4 lg:gap-6 items-center">
+              <div className="h-[160px] w-full lg:h-[180px] lg:w-[180px] relative">
                 <img
                   alt={m.name}
                   className="absolute inset-0 max-w-none w-full h-full object-cover object-bottom"
@@ -37,8 +40,8 @@ export function Team() {
                 />
               </div>
               <div className="flex flex-col gap-1 items-center text-[var(--dark)] text-center w-full" style={{ lineHeight: "normal" }}>
-                <p className="font-[var(--font-manrope)] font-normal text-[16px] w-full m-0">{m.name}</p>
-                <p className="font-[var(--font-manrope)] font-light text-sm w-full m-0">{m.role}</p>
+                <p className="font-[var(--font-manrope)] font-normal text-[15px] lg:text-[16px] w-full m-0">{m.name}</p>
+                <p className="font-[var(--font-manrope)] font-light text-xs lg:text-sm w-full m-0">{m.role}</p>
               </div>
             </div>
           ))}

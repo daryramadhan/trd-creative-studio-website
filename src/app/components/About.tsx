@@ -4,10 +4,10 @@ import { StarIcon } from "./shared";
 export function About() {
   return (
     <section className="w-full bg-white">
-      <div className="flex flex-col items-center px-[50px] py-[150px]">
-        <div className="flex flex-col gap-16 items-center max-w-[750px] w-full">
+      <div className="flex flex-col items-center px-5 sm:px-[50px] py-16 lg:py-[150px]">
+        <div className="flex flex-col gap-10 lg:gap-16 items-center max-w-[750px] w-full">
           {/* Illustration */}
-          <div className="h-[146px] w-[176px] relative overflow-hidden">
+          <div className="h-[120px] w-[144px] lg:h-[146px] lg:w-[176px] relative overflow-hidden">
             <img
               alt=""
               className="absolute max-w-none"
@@ -19,7 +19,7 @@ export function About() {
           {/* Big text */}
           <div
             className="font-[var(--font-manrope)] font-light text-[var(--dark)] text-center w-full"
-            style={{ fontSize: 42, letterSpacing: "-1px" }}
+            style={{ fontSize: "clamp(24px, 4.5vw, 42px)", letterSpacing: "-1px" }}
           >
             <p className="leading-[1.2] text-[var(--brand)] m-0">
               TRD Creative Studio is an independent design studio based in Indonesia.
@@ -36,7 +36,7 @@ export function About() {
 
           {/* Sub text */}
           <div className="flex flex-col gap-4 items-start justify-center max-w-[500px] text-[var(--dark)] leading-[1.5] text-center w-full font-[var(--font-manrope)] font-light">
-            <p className="m-0 w-full">
+            <p className="m-0 w-full text-sm lg:text-base">
               TRD Creative Studio partners with businesses to design thoughtful websites,
               platforms, and digital experiences–from early strategy to final execution
             </p>

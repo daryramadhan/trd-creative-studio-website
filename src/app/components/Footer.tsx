@@ -15,11 +15,11 @@ export function Footer() {
   return (
     <>
       <section className="w-full">
-        <div className="flex p-[100px] items-center gap-[313px]">
+        <div className="flex flex-col lg:flex-row p-5 lg:p-[100px] items-start gap-12 lg:gap-[313px]">
           {/* Brand */}
-          <div className="flex flex-col gap-8 items-start w-[350px] shrink-0">
-            <div className="h-[106px] w-[128px] relative">
-              <div className="absolute h-[105px] left-0 top-0 w-[128px] overflow-hidden">
+          <div className="flex flex-col gap-6 lg:gap-8 items-start w-full lg:w-[350px] lg:shrink-0">
+            <div className="h-[90px] w-[108px] lg:h-[106px] lg:w-[128px] relative">
+              <div className="absolute h-full left-0 top-0 w-full overflow-hidden">
                 <img
                   alt=""
                   className="absolute max-w-none"
@@ -29,23 +29,26 @@ export function Footer() {
               </div>
             </div>
             <div className="flex flex-col gap-4 items-start text-[var(--dark)] w-full font-[var(--font-manrope)]">
-              <p className="text-[42px] leading-[1] w-full font-light m-0" style={{ letterSpacing: "-1px" }}>
+              <p
+                className="leading-[1] w-full font-light m-0"
+                style={{ fontSize: "clamp(28px, 5vw, 42px)", letterSpacing: "-1px" }}
+              >
                 TRD Creative Studio
               </p>
-              <p className="text-base leading-[1.5] w-full m-0 font-light">
+              <p className="text-sm lg:text-base leading-[1.5] w-full m-0 font-light">
                 We believe every touch need the best for the clients, so we hire the best talent.
               </p>
             </div>
           </div>
 
           {/* Links */}
-          <div className="flex gap-10 items-start">
+          <div className="flex flex-wrap gap-10 items-start w-full lg:w-auto">
             {/* Services */}
             <div className="flex flex-col gap-4 items-start justify-center">
               <p className="font-[var(--font-manrope)] font-light text-[var(--brand)] text-sm leading-[1.4] whitespace-nowrap m-0">
                 SERVICES
               </p>
-              <div className="flex flex-col gap-2 items-start text-[var(--dark)] font-[var(--font-manrope)] font-light text-base" style={{ letterSpacing: "-0.32px" }}>
+              <div className="flex flex-col gap-2 items-start text-[var(--dark)] font-[var(--font-manrope)] font-light text-sm lg:text-base" style={{ letterSpacing: "-0.32px" }}>
                 {footerServices.map((s) => (
                   <p key={s} className="whitespace-nowrap m-0">{s}</p>
                 ))}
@@ -60,22 +63,22 @@ export function Footer() {
               </div>
             </div>
             {/* Quick Links */}
-            <div className="flex flex-col gap-4 items-start justify-center w-[125px]">
+            <div className="flex flex-col gap-4 items-start justify-center w-[110px] lg:w-[125px]">
               <p className="font-[var(--font-manrope)] font-light text-[var(--brand)] text-sm leading-[1.4] m-0">
                 QUICK LINKS
               </p>
-              <div className="flex flex-col gap-2 items-start text-[var(--dark)] font-[var(--font-manrope)] font-light whitespace-nowrap">
+              <div className="flex flex-col gap-2 items-start text-[var(--dark)] font-[var(--font-manrope)] font-light text-sm lg:text-base whitespace-nowrap">
                 {quickLinks.map((l) => (
                   <p key={l} className="m-0">{l}</p>
                 ))}
               </div>
             </div>
             {/* Social Media */}
-            <div className="flex flex-col gap-4 items-start justify-center w-[125px]">
+            <div className="flex flex-col gap-4 items-start justify-center w-[110px] lg:w-[125px]">
               <p className="font-[var(--font-manrope)] font-light text-[var(--brand)] text-sm leading-[1.4] m-0">
                 SOCIAL MEDIA
               </p>
-              <div className="flex flex-col gap-2 items-start text-[var(--dark)] font-[var(--font-manrope)] font-light whitespace-nowrap">
+              <div className="flex flex-col gap-2 items-start text-[var(--dark)] font-[var(--font-manrope)] font-light text-sm lg:text-base whitespace-nowrap">
                 {socialLinks.map((l) => (
                   <p key={l} className="m-0">{l}</p>
                 ))}
@@ -87,8 +90,8 @@ export function Footer() {
 
       {/* Character strip */}
       <div className="flex items-center justify-center overflow-hidden pb-[25px] w-full">
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} className="h-[134px] w-[202px] relative shrink-0 overflow-hidden">
+        {Array.from({ length: 12 }).map((_, i) => (
+          <div key={i} className="h-[80px] lg:h-[134px] w-[120px] lg:w-[202px] relative shrink-0 overflow-hidden">
             <img
               alt=""
               className="absolute inset-0 max-w-none w-full h-full object-cover object-bottom"
@@ -101,7 +104,7 @@ export function Footer() {
       {/* Copyright */}
       <div className="w-full pb-6">
         <div
-          className="flex gap-4 items-center justify-center px-[100px] py-6 text-[var(--dark)] text-base leading-[1.4] whitespace-nowrap font-normal"
+          className="flex flex-wrap gap-2 lg:gap-4 items-center justify-center px-5 lg:px-[100px] py-4 lg:py-6 text-[var(--dark)] text-sm lg:text-base leading-[1.4] font-normal"
           style={{ letterSpacing: "-0.32px" }}
         >
           <p className="font-[var(--font-manrope)] font-light m-0">2026 ⓒ TRD Creative Studio</p>

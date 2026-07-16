@@ -15,7 +15,7 @@ interface ProcessCardProps {
 
 function ProcessCard({ num, badge, img, imgW, imgH, title, desc }: ProcessCardProps) {
   return (
-    <div className="flex-1 bg-white rounded-[20px] flex flex-col items-start justify-between p-6 h-[460px] min-w-0">
+    <div className="w-full lg:flex-1 bg-white rounded-[20px] flex flex-col items-start justify-between p-6 h-auto lg:h-[460px] min-w-0 gap-8 lg:gap-0">
       <div className="flex items-start justify-between w-full">
         <p className="font-[var(--font-manrope)] font-light text-[var(--brand)] text-md whitespace-nowrap m-0">
           [{num}]
@@ -26,7 +26,7 @@ function ProcessCard({ num, badge, img, imgW, imgH, title, desc }: ProcessCardPr
           </span>
         )}
       </div>
-      <div className="relative overflow-hidden" style={{ height: imgH, width: imgW }}>
+      <div className="relative overflow-hidden hidden lg:block" style={{ height: imgH, width: imgW }}>
         <img
           alt=""
           className="absolute max-w-none"
@@ -34,18 +34,16 @@ function ProcessCard({ num, badge, img, imgW, imgH, title, desc }: ProcessCardPr
           src={img}
         />
       </div>
-      <div className="flex flex-col gap-[42px] items-start w-full font-[var(--font-manrope)] font-normal">
+      <div className="flex flex-col gap-4 lg:gap-[42px] items-start w-full font-[var(--font-manrope)] font-normal">
         <div className="flex flex-col gap-2 items-start w-full">
-          <p
-            className="text-[var(--brand)] w-full m-0 font-light text-[32px]"
-          >
+          <p className="text-[var(--brand)] w-full m-0 font-light text-[24px] lg:text-[32px]">
             {title}
           </p>
-          <p className="text-[var(--dark)] text-md font-light w-full m-0">
+          <p className="text-[var(--dark)] text-sm lg:text-md font-light w-full m-0">
             {desc}
           </p>
         </div>
-        <p className="text-[var(--brand)] font-light text-base whitespace-nowrap m-0">
+        <p className="text-[var(--brand)] font-light text-sm lg:text-base whitespace-nowrap m-0">
           Book discovery call →
         </p>
       </div>
@@ -57,24 +55,27 @@ export function Process() {
   return (
     <section className="w-full bg-[var(--brand)]">
       {/* Header */}
-      <div className="flex flex-col items-center justify-center pb-[25px] pt-[150px] px-[100px]">
-        <div className="flex items-end justify-between w-full text-white font-[var(--font-manrope)] font-normal">
+      <div className="flex flex-col items-center justify-center pb-6 lg:pb-[25px] pt-16 lg:pt-[150px] px-5 lg:px-[100px]">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between w-full text-white font-[var(--font-manrope)] font-normal gap-4 lg:gap-0">
           <div className="flex flex-col gap-4">
             <p className="font-[var(--font-archivo)] font-light text-xs leading-[1.4] m-0">
               THIS IS HOW WE WORKS
             </p>
-            <p className="text-[48px] leading-[1] m-0 max-w-[657px]" style={{ letterSpacing: "-0.96px" }}>
+            <p
+              className="leading-[1] m-0 max-w-full lg:max-w-[657px]"
+              style={{ fontSize: "clamp(28px, 5vw, 48px)", letterSpacing: "-0.96px" }}
+            >
               A clear process to deliver meaningful results.
             </p>
           </div>
-          <p className="text-regular font-light text-justify leading-[1.5] max-w-[418px] m-0">
+          <p className="text-sm lg:text-regular font-light text-left lg:text-justify leading-[1.5] max-w-full lg:max-w-[418px] m-0">
             We create experiences that are easier for users to understand, easier for teams to
             implement, and more valuable for businesses to grow.
           </p>
         </div>
       </div>
       {/* Cards */}
-      <div className="flex items-center gap-2 pb-[150px] pt-[25px] px-[100px] w-full">
+      <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-2 pb-16 lg:pb-[150px] pt-6 lg:pt-[25px] px-5 lg:px-[100px] w-full">
         <ProcessCard num="1" badge="Free 30-min Discovery" img={imgChatGptImageJul142026061053Pm41} imgW={142} imgH={138} title="Discover" desc="Understand the challenge, audience, business, and success criteria" />
         <ProcessCard num="2" img={imgChatGptImageJul142026061053Pm42} imgW={168} imgH={142} title="Shape" desc="Define the experience, scope, priorities, and creative direction" />
         <ProcessCard num="3" img={imgChatGptImageJul142026061050Pm21} imgW={194} imgH={150} title="Create" desc="Design, prototype, review, and prepare the solution for implementation" />
