@@ -5,12 +5,12 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[430px] w-full bg-[var(--dark)] lg:min-h-[982px]"
+      className="relative flex min-h-dvh w-full bg-[var(--dark)]"
     >
       <Navbar />
 
       {/* Main content */}
-      <div className="flex min-h-full w-full flex-col items-center justify-end gap-7 px-5 pb-10 pt-[104px] lg:gap-14 lg:px-[100px] lg:pb-[100px] lg:pt-[200px]">
+      <div className="flex min-h-dvh w-full flex-col items-center justify-center gap-7 px-5 py-10 pt-[104px] lg:gap-14 lg:px-[100px] lg:py-[100px] lg:pt-[120px]">
         {/* Badge */}
         <div className="flex gap-[10px] items-center justify-center rounded-full bg-[var(--brand-10)] px-3 py-2 lg:px-4">
           <p className="font-[var(--font-manrope)] text-[var(--brand)] text-[12px] leading-[1.4] text-center m-0 lg:text-sm">

@@ -104,8 +104,8 @@ export function Services() {
                   className="flex flex-col lg:flex-row gap-4 items-start w-full transition-transform duration-[450ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
                   style={{ transform: isOpen ? "translateY(0)" : "translateY(-12px)" }}
                 >
-                  {/* Sub-items */}
-                  <div className="flex flex-col gap-4 items-start pl-8 lg:pl-14 w-full lg:w-[400px] lg:shrink-0">
+                  {/* Sub-items — below images on mobile, left column on desktop */}
+                  <div className="order-2 flex flex-col gap-4 items-start pl-8 lg:order-1 lg:pl-14 w-full lg:w-[400px] lg:shrink-0">
                     <div className="flex flex-col gap-4 items-start w-full">
                       <p className="font-[var(--font-manrope)] font-light text-sm lg:text-base text-white whitespace-nowrap m-0">
                         What we can offer for you:
@@ -125,8 +125,8 @@ export function Services() {
                       Discuss Your Project →
                     </p>
                   </div>
-                  {/* Image grid — hidden on mobile */}
-                  <div className="flex w-full flex-1 gap-2 overflow-x-auto pb-1 lg:min-w-0 lg:overflow-hidden lg:pb-0">
+                  {/* Image grid — below title on mobile, right column on desktop */}
+                  <div className="order-1 flex w-full flex-1 gap-2 overflow-x-auto pb-1 lg:order-2 lg:min-w-0 lg:overflow-hidden lg:pb-0">
                     {[0, 1, 2, 3].map((i) => (
                       <div key={i} className="rounded-[6px] shrink-0 w-[140px] h-[140px] lg:w-[300px] lg:h-[300px] relative overflow-hidden">
                         <img

@@ -3,8 +3,8 @@ import imgRectangle11 from "../../imports/TrdCreativeStudioⒸWebsite-1/980394d6
 
 function WorkCard({ index }: { index: number }) {
   return (
-    <div className="flex-1 flex flex-col gap-3 items-center min-w-0">
-      <div className="h-[430px] sm:h-[520px] lg:h-[400px] rounded-[6px] w-full relative overflow-hidden">
+    <div className="flex w-full flex-1 flex-col gap-3 items-start min-w-0">
+      <div className="aspect-square w-full rounded-[6px] relative overflow-hidden">
         <img
           alt={`Pupuk Indonesia case study preview ${index}`}
           className="absolute inset-0 h-full w-full object-cover object-top"
@@ -55,7 +55,7 @@ export function SelectedWork() {
         {/* Work grid */}
         <div className="flex-1 flex flex-col gap-4 lg:gap-6 items-start min-w-0 w-full">
           {[0, 1, 2].map((row) => (
-            <div key={row} className="flex flex-col sm:flex-row gap-4 lg:gap-2 items-start w-full">
+            <div key={row} className="flex flex-col sm:flex-row gap-4 lg:gap-2 items-stretch w-full">
               <WorkCard index={row * 2 + 1} />
               <WorkCard index={row * 2 + 2} />
             </div>
