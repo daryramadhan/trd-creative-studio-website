@@ -9,13 +9,13 @@ const SERVICES = [
 export function ServiceTicker() {
   return (
     <div className="w-full border-b border-[var(--border-subtle)]">
-      <div className="flex gap-3 lg:gap-4 items-center justify-center px-5 lg:px-[100px] py-4 lg:py-6 flex-wrap">
+      <div className="flex flex-col gap-2 items-center justify-center px-5 py-8 lg:flex-row lg:flex-wrap lg:gap-4 lg:px-[100px] lg:py-6">
         {SERVICES.map((s) => (
           <div key={s} className="flex items-center gap-3 lg:gap-4">
             <span className="font-[var(--font-archivo)] font-extralight text-sm lg:text-[16px] text-[var(--dark)] text-center whitespace-nowrap">
               {s}
             </span>
-            <Dot color="#D9D9D9" size={4} />
+            <Dot color="#D9D9D9" size={4} className="hidden lg:block" />
           </div>
         ))}
         <div className="flex items-center gap-[10px] justify-center">

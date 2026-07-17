@@ -21,10 +21,10 @@ export function CTA() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3 lg:gap-4 items-center justify-center">
-            <button className="bg-white text-[var(--brand)] font-[var(--font-manrope)] font-regular text-sm lg:text-base leading-[1.4] px-6 py-2 rounded-full border-none cursor-pointer whitespace-nowrap hover:opacity-90 transition-opacity">
+            <button className="bg-white text-[var(--brand)] font-[var(--font-manrope)] font-normal text-sm lg:text-base leading-[1.4] px-6 py-2 rounded-full border-none cursor-pointer whitespace-nowrap hover:opacity-90 transition-opacity">
               Start a Project
             </button>
-            <button className="bg-transparent text-white font-[var(--font-manrope)] font-regular text-sm lg:text-base leading-[1.4] px-6 py-2 rounded-full border-none cursor-pointer whitespace-nowrap hover:opacity-80 transition-opacity">
+            <button className="bg-transparent text-white font-[var(--font-manrope)] font-normal text-sm lg:text-base leading-[1.4] px-6 py-2 rounded-full border-none cursor-pointer whitespace-nowrap hover:opacity-80 transition-opacity">
               Schedule Free 30-min Call
             </button>
           </div>

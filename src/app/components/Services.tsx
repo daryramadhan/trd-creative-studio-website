@@ -29,9 +29,9 @@ export function Services() {
   const [openIndex, setOpenIndex] = useState<number>(1);
 
   return (
-    <section className="w-full bg-[var(--brand)]">
+    <section id="services" className="w-full bg-[var(--brand)]">
       {/* Section header */}
-      <div className="flex flex-col items-start justify-center pt-16 lg:pt-[150px] px-5 lg:px-[100px]">
+      <div className="flex flex-col items-start justify-center pt-12 lg:pt-[150px] px-5 lg:px-[100px]">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between w-full text-white gap-4 lg:gap-0">
           <div className="flex flex-col gap-4 lg:gap-8 items-start">
             <p className="font-[var(--font-archivo)] font-light text-xs leading-[1.4] m-0">
@@ -52,7 +52,7 @@ export function Services() {
       </div>
 
       {/* Service rows */}
-      <div className="flex flex-col items-start pb-16 lg:pb-[150px] pt-8 lg:pt-[50px] px-5 lg:px-[100px] w-full">
+      <div className="flex flex-col items-start pb-12 lg:pb-[150px] pt-8 lg:pt-[50px] px-5 lg:px-[100px] w-full">
         {servicesData.map((svc) => {
           const isOpen = openIndex === svc.n;
           return (
@@ -63,7 +63,7 @@ export function Services() {
               {/* Row header — clickable */}
               <div
                 onClick={() => setOpenIndex(isOpen ? 0 : svc.n)}
-                className="flex gap-3 lg:gap-4 items-center w-full cursor-pointer transition-[margin-bottom] duration-[450ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+                className="flex gap-3 lg:gap-4 items-start lg:items-center w-full cursor-pointer transition-[margin-bottom] duration-[450ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
                 style={{ marginBottom: isOpen ? 24 : 0 }}
               >
                 <div className="w-8 lg:w-10 shrink-0">
@@ -73,7 +73,7 @@ export function Services() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p
-                    className="font-[var(--font-manrope)] font-light text-white m-0 truncate lg:whitespace-nowrap"
+                    className="font-[var(--font-manrope)] font-light text-white m-0 lg:whitespace-nowrap"
                     style={{ fontSize: "clamp(20px, 3.5vw, 32px)", letterSpacing: "-0.64px" }}
                   >
                     {svc.t}
@@ -83,9 +83,10 @@ export function Services() {
                 <a
                   href="#"
                   onClick={(e) => e.stopPropagation()}
-                  className="hidden lg:block font-[var(--font-manrope)] font-light text-sm text-white leading-[1.4] underline whitespace-nowrap"
+                  className="font-[var(--font-manrope)] font-light text-[12px] text-white leading-[1.4] underline whitespace-nowrap lg:text-sm"
                 >
-                  View Service Details
+                  <span className="lg:hidden">View</span>
+                  <span className="hidden lg:inline">View Service Details</span>
                 </a>
                 {/* Mobile expand indicator */}
                 <span className="lg:hidden text-white text-lg leading-none select-none" style={{ transform: isOpen ? "rotate(45deg)" : "none", display: "inline-block", transition: "transform 300ms" }}>+</span>
@@ -113,7 +114,7 @@ export function Services() {
                         {svc.items.map((item) => (
                           <div key={item} className="flex gap-3 items-center w-full">
                             <Dot color="white" size={5} />
-                            <p className="font-[var(--font-manrope)] font-light text-sm text-white whitespace-nowrap m-0">
+                            <p className="font-[var(--font-manrope)] font-light text-sm text-white m-0">
                               {item}
                             </p>
                           </div>
@@ -125,13 +126,12 @@ export function Services() {
                     </p>
                   </div>
                   {/* Image grid — hidden on mobile */}
-                  <div className="hidden lg:flex flex-1 gap-2 items-center min-w-0 overflow-hidden">
+                  <div className="flex w-full flex-1 gap-2 overflow-x-auto pb-1 lg:min-w-0 lg:overflow-hidden lg:pb-0">
                     {[0, 1, 2, 3].map((i) => (
-                      <div key={i} className="rounded-[6px] shrink-0 w-[300px] h-[300px] relative overflow-hidden">
+                      <div key={i} className="rounded-[6px] shrink-0 w-[140px] h-[140px] lg:w-[300px] lg:h-[300px] relative overflow-hidden">
                         <img
                           alt=""
-                          className="absolute left-0 top-[0.1%] w-full max-w-none"
-                          style={{ height: "133.33%" }}
+                          className="absolute inset-0 h-full w-full object-cover object-top"
                           src={imgRectangle12}
                         />
                       </div>

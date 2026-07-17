@@ -20,7 +20,7 @@ function PricingFeature({ text }: { text: string }) {
 
 export function Pricing() {
   return (
-    <section className="w-full bg-white">
+    <section id="pricing" className="w-full bg-white">
       <div className="flex flex-col gap-12 lg:gap-16 items-center justify-center py-16 lg:py-[150px] px-5 lg:px-[100px]">
         {/* Header */}
         <div className="flex flex-col gap-8 lg:gap-[41px] items-center w-full lg:w-[536px]">
@@ -61,16 +61,16 @@ export function Pricing() {
             </div>
             <div className="flex flex-col gap-2 items-start w-full">
               <p
-                className="font-[var(--font-manrope)] font-regular text-[var(--brand)] w-full m-0"
+                className="font-[var(--font-manrope)] font-normal text-[var(--brand)] w-full m-0"
                 style={{ fontSize: 48, lineHeight: "normal", letterSpacing: "-1px" }}
               >
                 $2,500
               </p>
-              <p className="font-[var(--font-manrope)] font-light text-md text-[var(--dark)] leading-[1.4] w-full m-0">
+              <p className="font-[var(--font-manrope)] font-light text-base text-[var(--dark)] leading-[1.4] w-full m-0">
                 Monthly Price, Cancel Anytime.
               </p>
             </div>
-            <button className="bg-[var(--brand)] text-white font-[var(--font-manrope)] font-regular leading-[1.4] px-6 py-2 rounded-full border-none cursor-pointer whitespace-nowrap hover:opacity-90 transition-opacity">
+            <button className="bg-[var(--brand)] text-white font-[var(--font-manrope)] font-normal leading-[1.4] px-6 py-2 rounded-full border-none cursor-pointer whitespace-nowrap hover:opacity-90 transition-opacity">
               Claim 1 of 4 spots left
             </button>
             <div className="h-px bg-[var(--border-subtle)] w-full mt-2 mb-2" />
@@ -103,7 +103,7 @@ export function Pricing() {
               >
                 $3,500
               </p>
-              <p className="font-[var(--font-manrope)] font-light text-md text-[var(--dark)] leading-[1.4] w-full m-0">
+              <p className="font-[var(--font-manrope)] font-light text-base text-[var(--dark)] leading-[1.4] w-full m-0">
                 Monthly Price, Cancel Anytime.
               </p>
             </div>

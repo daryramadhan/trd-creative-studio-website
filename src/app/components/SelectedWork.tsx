@@ -1,13 +1,13 @@
 import imgChatGptImageJul142026061051Pm31 from "../../imports/TrdCreativeStudioⒸWebsite-1/95ac5e22380e3659826653ab0d53d821056bbf47.png";
 import imgRectangle11 from "../../imports/TrdCreativeStudioⒸWebsite-1/980394d6102a53ba9bdac22f3b4fb6485086f05d.png";
 
-function WorkCard() {
+function WorkCard({ index }: { index: number }) {
   return (
     <div className="flex-1 flex flex-col gap-3 items-center min-w-0">
-      <div className="h-[260px] sm:h-[340px] lg:h-[400px] rounded-[6px] w-full relative overflow-hidden">
+      <div className="h-[430px] sm:h-[520px] lg:h-[400px] rounded-[6px] w-full relative overflow-hidden">
         <img
-          alt=""
-          className="absolute w-full max-w-none"
+          alt={`Pupuk Indonesia case study preview ${index}`}
+          className="absolute inset-0 h-full w-full object-cover object-top"
           src={imgRectangle11}
         />
       </div>
@@ -23,8 +23,8 @@ function WorkCard() {
 
 export function SelectedWork() {
   return (
-    <section className="w-full">
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-[100px] items-start p-5 lg:p-[100px]">
+    <section id="our-works" className="w-full">
+      <div className="flex flex-col lg:flex-row gap-10 lg:gap-[100px] items-start px-5 py-12 lg:p-[100px]">
         {/* Sidebar */}
         <div className="flex flex-col gap-6 lg:gap-10 items-start justify-center w-full lg:w-[341px] lg:shrink-0 lg:sticky lg:top-[100px] lg:self-start">
           <p className="font-[var(--font-archivo)] font-normal text-xs text-[var(--dark)] whitespace-nowrap leading-[1.4] m-0">
@@ -56,8 +56,8 @@ export function SelectedWork() {
         <div className="flex-1 flex flex-col gap-4 lg:gap-6 items-start min-w-0 w-full">
           {[0, 1, 2].map((row) => (
             <div key={row} className="flex flex-col sm:flex-row gap-4 lg:gap-2 items-start w-full">
-              <WorkCard />
-              <WorkCard />
+              <WorkCard index={row * 2 + 1} />
+              <WorkCard index={row * 2 + 2} />
             </div>
           ))}
         </div>
