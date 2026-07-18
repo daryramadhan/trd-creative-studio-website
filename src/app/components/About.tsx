@@ -19,7 +19,7 @@ export function About() {
           {/* Big text */}
           <div
             className="font-[var(--font-manrope)] font-light text-[var(--dark)] text-center w-full"
-            style={{ fontSize: "clamp(24px, 4.5vw, 42px)", letterSpacing: "-1px" }}
+            style={{ fontSize: "clamp(24px, 4.5vw, 48px)", letterSpacing: "-0.5px" }}
           >
             <p className="leading-[1.2] text-[var(--brand)] m-0">
               TRD Creative Studio is an independent design studio based in Indonesia.

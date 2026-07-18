@@ -14,8 +14,8 @@ const socialLinks = ["LinkedIn", "Instagram", "Behance"];
 export function Footer() {
   return (
     <>
-      <section className="w-full">
-        <div className="flex flex-col lg:flex-row p-5 lg:p-[100px] items-start gap-12 lg:gap-[313px]">
+      <section className="w-full py-10">
+        <div className="flex flex-col lg:flex-row p-4 lg:p-[100px] items-start gap-12 lg:gap-[313px]">
           {/* Brand */}
           <div className="flex flex-col gap-6 lg:gap-8 items-start w-full lg:w-[350px] lg:shrink-0">
             <div className="h-[90px] w-[108px] lg:h-[106px] lg:w-[128px] relative">

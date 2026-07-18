@@ -32,7 +32,7 @@ export function Pricing() {
           <div className="flex flex-col gap-4 items-start text-[var(--dark)] text-center w-full font-[var(--font-manrope)] font-normal">
             <p
               className="font-light w-full m-0"
-              style={{ fontSize: "clamp(32px, 6vw, 48px)", lineHeight: "normal", letterSpacing: "-1.92px" }}
+              style={{ fontSize: "clamp(32px, 6vw, 48px)", lineHeight: "normal", letterSpacing: "-0.8px" }}
             >
               Pricing &amp; Packages
             </p>
