@@ -11,7 +11,7 @@ import { Footer } from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="flex flex-col items-start w-full bg-white">
+    <div style={{ backgroundColor: "#fff", display: "flex", flexDirection: "column", alignItems: "flex-start", width: "100%" }}>
       <Hero />
       <ServiceTicker />
       <SelectedWork />
