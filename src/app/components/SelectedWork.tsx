@@ -1,4 +1,6 @@
-import { projects } from "../data/projects";
+import { useState, useEffect } from "react";
+import { getProjects, subscribeProjects } from "../data/projectStore";
+import { Project } from "../data/projects";
 import imgSidebar from "../../imports/TrdCreativeStudioⒸWebsite-1/95ac5e22380e3659826653ab0d53d821056bbf47.png";
 import { useTransitionNavigate } from "./TransitionContext";
 
@@ -48,8 +50,16 @@ function WorkCard({ slug, title, year, coverImage, index }: {
 }
 
 export function SelectedWork() {
-  // Show 6 cards — 3 rows × 2 columns
-  const displayProjects = projects.slice(0, 6);
+  const [projectList, setProjectList] = useState<Project[]>(getProjects());
+
+  useEffect(() => {
+    const update = () => setProjectList(getProjects());
+    const unsubscribe = subscribeProjects(update);
+    return () => unsubscribe();
+  }, []);
+
+  const displayProjects = projectList.filter((p) => !p.hidden).slice(0, 6);
+  const rowCount = Math.ceil(displayProjects.length / 2);
 
   return (
     <section id="our-works" className="w-full">
@@ -83,20 +93,16 @@ export function SelectedWork() {
         </div>
 
         {/* Work grid */}
-        <div className="flex-1 flex flex-col gap-4 lg:gap-6 items-start min-w-0 w-full">
-          {[0, 1, 2].map((row) => (
-            <div key={row} className="flex flex-col sm:flex-row gap-4 lg:gap-2 items-stretch w-full">
-              {displayProjects.slice(row * 2, row * 2 + 2).map((project, i) => (
-                <WorkCard
-                  key={project.slug}
-                  slug={project.slug}
-                  title={project.title}
-                  year={project.year}
-                  coverImage={project.coverImage}
-                  index={row * 2 + i + 1}
-                />
-              ))}
-            </div>
+        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 items-start min-w-0 w-full">
+          {displayProjects.map((project, i) => (
+            <WorkCard
+              key={project.slug}
+              slug={project.slug}
+              title={project.title}
+              year={project.year}
+              coverImage={project.coverImage}
+              index={i + 1}
+            />
           ))}
         </div>
 

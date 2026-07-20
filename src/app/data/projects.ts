@@ -19,6 +19,7 @@ export interface Project {
   challenge: string;
   outcome: string;
   stats: { label: string; value: string }[];
+  hidden?: boolean;
 }
 
 export const projects: Project[] = [

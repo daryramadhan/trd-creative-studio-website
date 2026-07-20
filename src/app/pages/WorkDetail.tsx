@@ -1,15 +1,25 @@
 import { useParams } from "react-router";
-import { projects } from "../data/projects";
+import { getProjects, subscribeProjects } from "../data/projectStore";
+import { Project } from "../data/projects";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { StarIcon } from "../components/shared";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useTransitionNavigate } from "../components/TransitionContext";
 
 export default function WorkDetail() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useTransitionNavigate();
-  const project = projects.find((p) => p.slug === slug);
+  const [projectList, setProjectList] = useState<Project[]>(getProjects());
+
+  useEffect(() => {
+    const update = () => setProjectList(getProjects());
+    const unsubscribe = subscribeProjects(update);
+    return () => unsubscribe();
+  }, []);
+
+  const availableProjects = projectList.filter((p) => !p.hidden);
+  const project = availableProjects.find((p) => p.slug === slug);
 
   // Scroll to top on mount
   useEffect(() => {
@@ -40,8 +50,8 @@ export default function WorkDetail() {
   }
 
   // Next project for navigation
-  const currentIndex = projects.findIndex((p) => p.slug === slug);
-  const nextProject = projects[(currentIndex + 1) % projects.length];
+  const currentIndex = availableProjects.findIndex((p) => p.slug === slug);
+  const nextProject = availableProjects[(currentIndex + 1) % availableProjects.length];
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
