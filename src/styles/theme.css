@@ -147,6 +147,14 @@
   html {
     font-size: var(--font-size);
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* GPU Hardware Acceleration for Smooth Mobile Fixed Elements */
+  .fixed {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
   }
 
   h1 {
