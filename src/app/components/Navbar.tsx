@@ -19,7 +19,7 @@ export function Navbar() {
       : "text-white";
 
   const navBgClass = scrolled
-    ? "backdrop-blur-md py-4"
+    ? "py-4"
     : "py-6 lg:py-10";
 
   const buttonBgClass = mobileMenuOpen
