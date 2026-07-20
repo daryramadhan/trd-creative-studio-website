@@ -1,4 +1,3 @@
-import imgChatGptImageJul142026055012Pm1 from "../../imports/TrdCreativeStudioⒸWebsite-1/1632661aa3faadb418045d3e7667246cd6175bc3.png";
 import { StarIcon } from "./shared";
 
 export function About() {
@@ -6,14 +5,9 @@ export function About() {
     <section className="w-full bg-white">
       <div className="flex flex-col items-center px-5 sm:px-[50px] py-16 lg:py-[150px]">
         <div className="flex flex-col gap-10 lg:gap-16 items-center max-w-[750px] w-full">
-          {/* Illustration */}
-          <div className="h-[120px] w-[144px] lg:h-[146px] lg:w-[176px] relative overflow-hidden">
-            <img
-              alt=""
-              className="absolute max-w-none"
-              style={{ height: "166.31%", left: "-18.6%", top: "-33.16%", width: "137.2%" }}
-              src={imgChatGptImageJul142026055012Pm1}
-            />
+          {/* Logo illustration */}
+          <div className="flex items-center justify-center">
+            <StarIcon color="#eb5503" size={100} />
           </div>
 
           {/* Big text */}

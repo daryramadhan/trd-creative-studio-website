@@ -9,37 +9,24 @@ export function StarIcon({
   size?: number;
   className?: string;
 }) {
-  const mid = size * 0.4705;
-  const arm = size * 0.5294;
-  const thick = size * 0.0589;
   return (
-    <div className={`flex items-center justify-center shrink-0 ${className}`} style={{ width: size, height: size }}>
-      <div style={{ width: size, height: size, position: "relative", transform: "rotate(90deg)" }}>
-        {/* Horizontal arms */}
-        <div style={{ position: "absolute", background: color, height: thick, left: 0, top: mid, width: arm }} />
-        <div style={{ position: "absolute", background: color, height: thick, right: 0, top: mid, width: arm }} />
-        {/* Vertical arms */}
-        <div style={{ position: "absolute", background: color, width: thick, left: mid, top: mid, height: arm }} />
-        <div style={{ position: "absolute", background: color, width: thick, left: mid, top: 0, height: arm }} />
-        {/* Diagonal arms */}
-        <div style={{ position: "absolute", left: size * 0.1176, top: size * 0.1176, width: size * 0.416, height: size * 0.416, display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ background: color, height: thick, width: arm, transform: "rotate(-135deg)" }} />
-        </div>
-        <div style={{ position: "absolute", left: size * 0.1176, top: size * 0.4705, width: size * 0.416, height: size * 0.416, display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ background: color, height: thick, width: arm, transform: "rotate(135deg)" }} />
-        </div>
-        <div style={{ position: "absolute", left: size * 0.4705, top: size * 0.4705, width: size * 0.416, height: size * 0.416, display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ background: color, height: thick, width: arm, transform: "rotate(45deg)" }} />
-        </div>
-        <div style={{ position: "absolute", left: size * 0.4705, top: size * 0.1176, width: size * 0.416, height: size * 0.416, display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ background: color, height: thick, width: arm, transform: "rotate(-45deg)" }} />
-        </div>
-        {/* Center dot */}
-        <div style={{ position: "absolute", right: size * 0.647, top: size * 0.176, width: size * 0.166, height: size * 0.166, display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ background: color, borderRadius: "50%", width: thick * 2, height: thick * 2 }} />
-        </div>
-      </div>
-    </div>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 42 42"
+      fill="none"
+      className={`shrink-0 ${className}`}
+    >
+      <rect y="19.7652" width="22.2353" height="2.47059" fill={color} />
+      <rect x="42" y="22.2353" width="22.2353" height="2.47059" transform="rotate(-180 42 22.2353)" fill={color} />
+      <rect x="22.2344" y="19.7652" width="22.2353" height="2.47059" transform="rotate(90 22.2344 19.7652)" fill={color} />
+      <rect x="19.7656" y="22.2353" width="22.2353" height="2.47059" transform="rotate(-90 19.7656 22.2353)" fill={color} />
+      <rect x="20.6641" y="22.4111" width="22.2353" height="2.47059" transform="rotate(-135 20.6641 22.4111)" fill={color} />
+      <rect x="27.1777" y="10.9062" width="4.94118" height="4.94118" rx="2.47059" transform="rotate(-45 27.1777 10.9062)" fill={color} />
+      <rect x="21.5117" y="19.7652" width="22.2353" height="2.47059" transform="rotate(45 21.5117 19.7652)" fill={color} />
+      <rect x="22.4121" y="21.5124" width="22.2353" height="2.47059" transform="rotate(135 22.4121 21.5124)" fill={color} />
+    </svg>
   );
 }
 

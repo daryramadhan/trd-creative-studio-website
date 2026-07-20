@@ -67,14 +67,14 @@ export default function WorkDetail() {
             Back
           </button>
 
-          {/* Category tag */}
+          {/* Category tag
           <p className="font-[var(--font-archivo)] font-normal text-xs text-[var(--text-muted-trd)] uppercase tracking-widest m-0">
             {project.category}
-          </p>
+          </p> */}
 
           {/* Title */}
           <h1
-            className="font-[var(--font-manrope)] font-normal text-[var(--dark)] m-0"
+            className="font-[var(--font-manrope)] font-normal text-[var(--dark)] m-0 mt-24 mb-4"
             style={{ fontSize: "clamp(40px, 7vw, 96px)", lineHeight: 0.9, letterSpacing: "-3px" }}
           >
             {project.title}

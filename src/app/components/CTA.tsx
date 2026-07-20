@@ -1,8 +1,11 @@
+import { StarIcon } from "./shared";
+
 export function CTA() {
   return (
     <section className="w-full bg-[var(--brand)]">
       <div className="flex flex-col items-center justify-center py-16 lg:py-[100px] px-5 lg:px-[100px]">
         <div className="flex flex-col gap-8 lg:gap-12 items-center max-w-[858px] w-full">
+          <StarIcon color="white" size={48} />
           <div className="bg-white/10 flex items-center justify-center px-4 py-2 rounded-full">
             <p className="font-[var(--font-manrope)] font-light text-white text-sm leading-[1.4] text-center whitespace-nowrap m-0">
               TRD Creative Studio are ready to help you!

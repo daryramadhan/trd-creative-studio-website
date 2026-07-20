@@ -31,14 +31,14 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
         navigate(to);
       }
       setTransitionState("exiting");
-    }, 600); // Wait for the slide-in to complete
+    }, 800); // 600ms slide-in + 500ms (0.5s) hold before sliding out
   };
 
   useEffect(() => {
     if (transitionState === "exiting") {
       const timer = setTimeout(() => {
         setTransitionState("idle");
-      }, 600); // Wait for the slide-out to complete
+      }, 600); // 600ms slide-out animation
       return () => clearTimeout(timer);
     }
   }, [transitionState]);
@@ -86,7 +86,7 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
           pointerEvents,
         }}
       >
-        <StarIcon color="white" size={80} className="animate-pulse" />
+        <StarIcon color="white" size={80} />
       </div>
     </TransitionContext.Provider>
   );
