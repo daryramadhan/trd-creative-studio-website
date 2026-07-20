@@ -126,7 +126,10 @@ export function Services() {
                     </p>
                   </div>
                   {/* Image grid — below title on mobile, right column on desktop */}
-                  <div className="order-1 flex w-full flex-1 gap-2 overflow-x-auto pb-1 lg:order-2 lg:min-w-0 lg:overflow-hidden lg:pb-0">
+                  <div
+                    className="order-1 flex w-full flex-1 gap-2 overflow-x-auto pb-1 lg:order-2 lg:min-w-0 lg:overflow-hidden lg:pb-0"
+                    style={{ touchAction: "pan-x", WebkitOverflowScrolling: "touch" }}
+                  >
                     {[0, 1, 2, 3].map((i) => (
                       <div key={i} className="rounded-[6px] shrink-0 w-[140px] h-[140px] lg:w-[300px] lg:h-[300px] relative overflow-hidden">
                         <img

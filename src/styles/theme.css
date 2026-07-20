@@ -144,17 +144,26 @@
   * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
   */
 
-  html {
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    max-width: 100vw;
     font-size: var(--font-size);
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  /* GPU Hardware Acceleration for Smooth Mobile Fixed Elements */
+  /* Smooth scroll only on non-touch / desktop devices to prevent mobile touch drag snapping */
+  @media (hover: hover) and (pointer: fine) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* GPU Acceleration without forcing layer composition bugs */
   .fixed {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
-    will-change: transform;
   }
 
   h1 {

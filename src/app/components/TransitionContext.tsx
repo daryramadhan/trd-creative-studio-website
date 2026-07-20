@@ -18,7 +18,7 @@ export function useTransitionNavigate() {
 }
 
 export function TransitionProvider({ children }: { children: React.ReactNode }) {
-  const [transitionState, setTransitionState] = useState<"idle" | "entering" | "exiting">("exiting");
+  const [transitionState, setTransitionState] = useState<"idle" | "entering" | "exiting">("idle");
   const navigate = useNavigate();
 
   const transitionNavigate = (to: string | number) => {
