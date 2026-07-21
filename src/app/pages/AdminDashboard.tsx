@@ -20,7 +20,53 @@ export default function AdminDashboard() {
   const [isCompressing, setIsCompressing] = useState(false);
   const [compressionInfo, setCompressionInfo] = useState<string>("");
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [isExportModalOpen, setIsExportModalOpen] = useState(false);
+  const [exportedCode, setExportedCode] = useState("");
   const navigate = useNavigate();
+
+  // Generate TS Code for projects.ts
+  const handleOpenExport = () => {
+    const jsonStr = JSON.stringify(projectList, null, 2);
+    const code = `// Project data — single source of truth for SelectedWork + detail pages
+// Generated from Admin Dashboard on ${new Date().toLocaleDateString()}
+
+export interface Project {
+  slug: string;
+  title: string;
+  year: string;
+  category: string;
+  tags: string[];
+  coverImage: string;
+  images: string[];
+  description: string;
+  challenge: string;
+  outcome: string;
+  stats: { label: string; value: string }[];
+  hidden?: boolean;
+}
+
+export const projects: Project[] = ${jsonStr};
+`;
+    setExportedCode(code);
+    setIsExportModalOpen(true);
+  };
+
+  const handleCopyCode = () => {
+    navigator.clipboard.writeText(exportedCode);
+    triggerToast("Code copied to clipboard! Paste into src/app/data/projects.ts");
+  };
+
+  const handleDownloadCode = () => {
+    const blob = new Blob([exportedCode], { type: "text/typescript;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "projects.ts");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    triggerToast("Downloaded projects.ts file!");
+  };
 
   // Form State
   const [formData, setFormData] = useState<Project>({
@@ -124,7 +170,7 @@ export default function AdminDashboard() {
 
     setIsCompressing(true);
     try {
-      const res = await compressImageFile(file, 1600, 1600, 0.82);
+      const res = await compressImageFile(file, 1200, 1200, 0.72);
       setFormData((prev) => ({ ...prev, coverImage: res.dataUrl }));
       setCompressionInfo(
         `Optimized: ${formatBytes(res.originalSize)} → ${formatBytes(res.compressedSize)}`
@@ -146,7 +192,7 @@ export default function AdminDashboard() {
     try {
       const newImages: string[] = [];
       for (let i = 0; i < files.length; i++) {
-        const res = await compressImageFile(files[i], 1600, 1600, 0.82);
+        const res = await compressImageFile(files[i], 1200, 1200, 0.72);
         newImages.push(res.dataUrl);
       }
       setFormData((prev) => ({
@@ -265,7 +311,7 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <button
             onClick={handleReset}
             className="text-xs text-[var(--text-muted-trd)] hover:text-white transition-colors cursor-pointer border border-white/10 px-3 py-1.5 rounded-full"
@@ -279,6 +325,12 @@ export default function AdminDashboard() {
           >
             Live Site ↗
           </Link>
+          <button
+            onClick={handleOpenExport}
+            className="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-medium px-4 py-2 rounded-full transition-all cursor-pointer flex items-center gap-1.5 shadow-md shadow-emerald-950/50"
+          >
+            <span>📥 Export Code</span>
+          </button>
           <button
             onClick={handleOpenAdd}
             className="bg-[var(--brand)] text-white text-xs font-medium px-4 py-2 rounded-full hover:opacity-90 active:scale-95 transition-all cursor-pointer flex items-center gap-1.5"
@@ -706,6 +758,67 @@ export default function AdminDashboard() {
                   </button>
                 </div>
               </form>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Export Code Modal */}
+      {isExportModalOpen && (
+        <div className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-[#161616] border border-white/15 rounded-2xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+            {/* Modal Header */}
+            <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-[#1f1f1f]">
+              <div className="flex items-center gap-2">
+                <StarIcon color="#10b981" size={22} />
+                <h2 className="text-base font-medium text-white m-0">Export `projects.ts` Code for Live Site</h2>
+              </div>
+              <button
+                onClick={() => setIsExportModalOpen(false)}
+                className="text-white/60 hover:text-white text-sm cursor-pointer border border-white/10 w-7 h-7 rounded-full flex items-center justify-center"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6 flex-1 overflow-y-auto space-y-4">
+              <div className="bg-emerald-950/40 border border-emerald-500/30 p-4 rounded-xl text-xs text-emerald-200 leading-relaxed flex flex-col gap-1.5">
+                <span className="font-semibold text-emerald-400">💡 100% Free Live Site Update Workflow:</span>
+                <ol className="list-decimal pl-4 space-y-1 text-emerald-300/90">
+                  <li>Click <strong>Copy Code to Clipboard</strong> or <strong>Download `projects.ts`</strong> below.</li>
+                  <li>Replace the file at <code className="bg-black/50 px-1.5 py-0.5 rounded text-emerald-300 font-mono">src/app/data/projects.ts</code> with this exported code.</li>
+                  <li>Push to GitHub (<code className="bg-black/50 px-1.5 py-0.5 rounded font-mono">git commit -am "Update projects" && git push</code>).</li>
+                  <li>Your hosting (Vercel / Netlify) auto-deploys your live website instantly for <strong>$0 cost</strong>!</li>
+                </ol>
+              </div>
+
+              <div className="relative">
+                <pre className="bg-[#0a0a0a] border border-white/10 rounded-xl p-4 text-[11px] font-mono text-emerald-400/90 max-h-80 overflow-auto whitespace-pre-wrap select-all">
+                  {exportedCode}
+                </pre>
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="px-6 py-4 border-t border-white/10 flex items-center justify-between bg-[#1f1f1f]">
+              <span className="text-xs text-[var(--text-muted-trd)]">
+                {projectList.length} project(s) ready to export
+              </span>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={handleDownloadCode}
+                  className="text-xs text-white bg-white/10 hover:bg-white/20 border border-white/15 px-4 py-2 rounded-full cursor-pointer transition-all flex items-center gap-1.5"
+                >
+                  💾 Download `projects.ts`
+                </button>
+                <button
+                  onClick={handleCopyCode}
+                  className="text-xs text-white bg-emerald-600 hover:bg-emerald-500 font-medium px-5 py-2 rounded-full cursor-pointer transition-all shadow-lg shadow-emerald-900/40 flex items-center gap-1.5"
+                >
+                  📋 Copy Code to Clipboard
+                </button>
+              </div>
             </div>
           </div>
         </div>

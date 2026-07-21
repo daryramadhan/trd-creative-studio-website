@@ -172,24 +172,33 @@ export default function WorkDetail() {
       </section>
 
       {/* ── Image Gallery ─────────────────────────────────────────── */}
-      {project.images.length > 1 && (
-        <section className="w-full px-5 pb-10 lg:px-[100px] lg:pb-16">
-          <p className="font-[var(--font-archivo)] font-normal text-xs text-[var(--text-muted-trd)] uppercase tracking-widest mb-6 m-0">
-            Gallery
-          </p>
-          <div className="flex flex-col gap-4 lg:gap-6">
-            {project.images.slice(1).map((img, i) => (
-              <div key={i} className="w-full rounded-[6px] overflow-hidden aspect-video relative bg-[#f4f4f4]">
-                <img
-                  src={img}
-                  alt={`${project.title} screenshot ${i + 2}`}
-                  className="absolute inset-0 w-full h-full object-cover object-top"
-                />
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
+      {project.images && project.images.length > 0 && (() => {
+        const displayImages = project.images.filter(
+          (img, idx) => !(idx === 0 && img === project.coverImage)
+        );
+        const imagesToRender = displayImages.length > 0 ? displayImages : (project.images[0] !== project.coverImage ? project.images : []);
+
+        if (imagesToRender.length === 0) return null;
+
+        return (
+          <section className="w-full px-5 pb-10 lg:px-[100px] lg:pb-16">
+            <p className="font-[var(--font-archivo)] font-normal text-xs text-[var(--text-muted-trd)] uppercase tracking-widest mb-6 m-0">
+              Gallery
+            </p>
+            <div className="flex flex-col gap-6 lg:gap-10">
+              {imagesToRender.map((img, i) => (
+                <div key={i} className="w-full rounded-[8px] overflow-hidden bg-[#f8f8f8] border border-[#eee]">
+                  <img
+                    src={img}
+                    alt={`${project.title} gallery screenshot ${i + 1}`}
+                    className="w-full h-auto block"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
 
       {/* ── Next Project ──────────────────────────────────────────── */}
       <section className="w-full px-5 py-16 lg:px-[100px] lg:py-24 bg-[var(--dark)] mt-6">

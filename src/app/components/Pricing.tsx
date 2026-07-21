@@ -1,10 +1,21 @@
 import { StarIcon } from "./shared";
 
-const pricingFeatures = [
-  "Product manager, product designer and researcher",
-  "Figma, docs and all assets licenses",
-  "Weekly meetings/dedicated message communications",
-  "Simple requests? same day. Complex flows in 1-3 business days",
+const studioFeatures = [
+  "Dedicated product designer",
+  "Product and UX consultation",
+  "Flexible design requests",
+  "Weekly progress meetings",
+  "Direct studio communication",
+  "Figma files and documentation",
+];
+
+const projectBasedFeatures = [
+  "Project discovery and planning",
+  "UX flows and interface design",
+  "Interactive prototype",
+  "Figma files and documentation",
+  "Scheduled progress reviews",
+  "Defined scope, timeline, and deliverables",
 ];
 
 function PricingFeature({ text }: { text: string }) {
@@ -64,7 +75,7 @@ export function Pricing() {
                 className="font-[var(--font-manrope)] font-normal text-[var(--brand)] w-full m-0"
                 style={{ fontSize: 48, lineHeight: "normal", letterSpacing: "-1px" }}
               >
-                $2,500
+                Rp7.500.000
               </p>
               <p className="font-[var(--font-manrope)] font-light text-base text-[var(--dark)] leading-[1.4] w-full m-0">
                 Monthly Price, Cancel Anytime.
@@ -78,7 +89,7 @@ export function Pricing() {
               <p className="font-[var(--font-manrope)] font-light text-sm text-[var(--dark)] w-full m-0">
                 Includes :
               </p>
-              {pricingFeatures.map((f) => <PricingFeature key={f} text={f} />)}
+              {studioFeatures.map((f) => <PricingFeature key={f} text={f} />)}
             </div>
           </div>
 
@@ -101,10 +112,10 @@ export function Pricing() {
                 className="font-[var(--font-manrope)] font-regular text-[var(--dark)] w-full m-0"
                 style={{ fontSize: 48, lineHeight: "normal", letterSpacing: "-1px" }}
               >
-                $3,500
+                Rp5.000.000
               </p>
               <p className="font-[var(--font-manrope)] font-light text-base text-[var(--dark)] leading-[1.4] w-full m-0">
-                Monthly Price, Cancel Anytime.
+                Start from
               </p>
             </div>
             <button className="bg-transparent text-[var(--brand)] font-[var(--font-manrope)] font-normal text-base leading-[1.4] px-6 py-2 rounded-full border border-[var(--brand)] cursor-pointer whitespace-nowrap hover:bg-[var(--brand-5)] transition-colors">
@@ -115,7 +126,7 @@ export function Pricing() {
               <p className="font-[var(--font-manrope)] font-light text-sm text-[var(--dark)] w-full m-0">
                 Includes :
               </p>
-              {pricingFeatures.map((f) => <PricingFeature key={f} text={f} />)}
+              {projectBasedFeatures.map((f) => <PricingFeature key={f} text={f} />)}
             </div>
           </div>
         </div>

@@ -7,13 +7,11 @@ interface ProcessCardProps {
   num: string;
   badge?: string;
   img: string;
-  imgW: number;
-  imgH: number;
   title: string;
   desc: string;
 }
 
-function ProcessCard({ num, badge, img, imgW, imgH, title, desc }: ProcessCardProps) {
+function ProcessCard({ num, badge, img, title, desc }: ProcessCardProps) {
   return (
     <div className="w-full lg:flex-1 bg-white rounded-[20px] flex flex-col items-start justify-between p-6 h-auto lg:h-[460px] min-w-0 gap-7 lg:gap-0">
       <div className="flex items-start justify-between w-full">
@@ -26,17 +24,15 @@ function ProcessCard({ num, badge, img, imgW, imgH, title, desc }: ProcessCardPr
           </span>
         )}
       </div>
-      <div
-        className="relative block overflow-hidden"
-        style={{ height: imgH, width: imgW }}
-      >
+
+      <div className="h-[175px] w-full flex items-center justify-start my-1 overflow-hidden">
         <img
-          alt=""
-          className="absolute max-w-none"
-          style={{ height: "146%", left: "-17%", top: "-23%", width: "141%" }}
+          alt={title}
           src={img}
+          className="h-full w-auto max-w-full object-contain scale-[1.3] origin-left"
         />
       </div>
+
       <div className="flex flex-col gap-4 lg:gap-[42px] items-start w-full font-[var(--font-manrope)] font-normal">
         <div className="flex flex-col gap-2 items-start w-full">
           <p className="text-[var(--brand)] w-full m-0 font-light text-[24px] lg:text-[32px]">
@@ -79,10 +75,10 @@ export function Process() {
       </div>
       {/* Cards */}
       <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-2 pb-12 lg:pb-[150px] pt-6 lg:pt-[25px] px-5 lg:px-[100px] w-full">
-        <ProcessCard num="1" badge="Free 30-min Discovery" img={imgChatGptImageJul142026061053Pm41} imgW={142} imgH={138} title="Discover" desc="Understand the challenge, audience, business, and success criteria" />
-        <ProcessCard num="2" img={imgChatGptImageJul142026061053Pm42} imgW={168} imgH={142} title="Shape" desc="Define the experience, scope, priorities, and creative direction" />
-        <ProcessCard num="3" img={imgChatGptImageJul142026061050Pm21} imgW={194} imgH={150} title="Create" desc="Design, prototype, review, and prepare the solution for implementation" />
-        <ProcessCard num="4" img={imgChatGptImageJul142026061051Pm31} imgW={159} imgH={140} title="Deliver" desc="Complete quality assurance, handoff, development support, and launch" />
+        <ProcessCard num="1" badge="Free 30-min Discovery" img={imgChatGptImageJul142026061053Pm41} title="Discover" desc="Understand the challenge, audience, business, and success criteria" />
+        <ProcessCard num="2" img={imgChatGptImageJul142026061053Pm42} title="Shape" desc="Define the experience, scope, priorities, and creative direction" />
+        <ProcessCard num="3" img={imgChatGptImageJul142026061050Pm21} title="Create" desc="Design, prototype, review, and prepare the solution for implementation" />
+        <ProcessCard num="4" img={imgChatGptImageJul142026061051Pm31} title="Deliver" desc="Complete quality assurance, handoff, development support, and launch" />
       </div>
     </section>
   );

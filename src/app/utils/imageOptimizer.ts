@@ -12,9 +12,9 @@ export interface CompressionResult {
 
 export function compressImageFile(
   file: File,
-  maxWidth = 1600,
-  maxHeight = 1600,
-  quality = 0.82
+  maxWidth = 1200,
+  maxHeight = 1200,
+  quality = 0.72
 ): Promise<CompressionResult> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -49,9 +49,12 @@ export function compressImageFile(
         ctx.imageSmoothingQuality = "high";
         ctx.drawImage(img, 0, 0, width, height);
 
-        // Export as WebP or JPEG
-        const outputFormat = file.type === "image/png" && file.size < 1000000 ? "image/png" : "image/jpeg";
-        const dataUrl = canvas.toDataURL(outputFormat, quality);
+        // Convert to WebP or JPEG for massive base64 size reduction
+        let dataUrl = canvas.toDataURL("image/webp", quality);
+        if (!dataUrl.startsWith("data:image/webp")) {
+          dataUrl = canvas.toDataURL("image/jpeg", quality);
+        }
+
         const compressedSize = Math.round((dataUrl.length * 3) / 4);
 
         resolve({

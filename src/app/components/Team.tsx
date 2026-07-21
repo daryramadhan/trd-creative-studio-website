@@ -30,19 +30,19 @@ export function Team() {
           </div>
         </div>
         {/* Right: team grid */}
-        <div className="grid grid-cols-4 gap-3 lg:flex lg:flex-row lg:gap-4 items-start w-full lg:w-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:flex lg:flex-row lg:gap-6 items-start w-full lg:w-auto">
           {teamMembers.map((m, i) => (
-            <div key={i} className="flex flex-col gap-3 lg:gap-6 items-center min-w-0">
-              <div className="h-[74px] w-full lg:h-[180px] lg:w-[180px] relative">
+            <div key={i} className="flex flex-col gap-3 lg:gap-6 items-center min-w-0 flex-1">
+              <div className="h-[140px] lg:h-[180px] w-full flex items-center justify-center overflow-hidden">
                 <img
                   alt={m.name}
-                  className="absolute inset-0 max-w-none w-full h-full object-cover object-bottom"
+                  className="h-full w-auto max-w-full object-contain"
                   src={imgImage11}
                 />
               </div>
               <div className="flex flex-col gap-1 items-center text-[var(--dark)] text-center w-full" style={{ lineHeight: "normal" }}>
-                <p className="font-[var(--font-manrope)] font-normal text-[11px] lg:text-[16px] w-full m-0">{m.name}</p>
-                <p className="font-[var(--font-manrope)] font-light text-[9px] lg:text-sm w-full m-0">{m.role}</p>
+                <p className="font-[var(--font-manrope)] font-normal text-sm lg:text-base w-full m-0">{m.name}</p>
+                <p className="font-[var(--font-manrope)] font-light text-xs lg:text-sm text-[var(--text-muted-trd)] w-full m-0">{m.role}</p>
               </div>
             </div>
           ))}

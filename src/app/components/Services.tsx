@@ -25,6 +25,9 @@ const servicesData = [
   },
 ];
 
+// Toggle to show/hide service preview images (Set to true when ready to use)
+const SHOW_SERVICE_IMAGES = false;
+
 export function Services() {
   const [openIndex, setOpenIndex] = useState<number>(1);
 
@@ -125,21 +128,23 @@ export function Services() {
                       Discuss Your Project →
                     </p>
                   </div>
-                  {/* Image grid — below title on mobile, right column on desktop */}
-                  <div
-                    className="order-1 flex w-full flex-1 gap-2 overflow-x-auto pb-1 lg:order-2 lg:min-w-0 lg:overflow-hidden lg:pb-0"
-                    style={{ touchAction: "pan-x", WebkitOverflowScrolling: "touch" }}
-                  >
-                    {[0, 1, 2, 3].map((i) => (
-                      <div key={i} className="rounded-[6px] shrink-0 w-[140px] h-[140px] lg:w-[300px] lg:h-[300px] relative overflow-hidden">
-                        <img
-                          alt=""
-                          className="absolute inset-0 h-full w-full object-cover object-top"
-                          src={imgRectangle12}
-                        />
-                      </div>
-                    ))}
-                  </div>
+                  {/* Image grid — hidden by default, set SHOW_SERVICE_IMAGES = true when ready to show */}
+                  {SHOW_SERVICE_IMAGES && (
+                    <div
+                      className="order-1 flex w-full flex-1 gap-2 overflow-x-auto pb-1 lg:order-2 lg:min-w-0 lg:overflow-hidden lg:pb-0"
+                      style={{ touchAction: "pan-x", WebkitOverflowScrolling: "touch" }}
+                    >
+                      {[0, 1, 2, 3].map((i) => (
+                        <div key={i} className="rounded-[6px] shrink-0 w-[140px] h-[140px] lg:w-[300px] lg:h-[300px] relative overflow-hidden">
+                          <img
+                            alt=""
+                            className="absolute inset-0 h-full w-full object-cover object-top"
+                            src={imgRectangle12}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

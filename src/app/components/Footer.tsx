@@ -18,7 +18,7 @@ const quickLinks = [
 
 const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/company/trd-creative-studio" },
-  { label: "Instagram", href: "https://instagram.com/trd.studio" },
+  { label: "Instagram", href: "https://www.instagram.com/trdcreative/" },
   { label: "Behance", href: "https://behance.net/trdcreative" },
 ];
 
